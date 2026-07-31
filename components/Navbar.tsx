@@ -1,0 +1,125 @@
+'use client';
+
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X } from "lucide-react";
+import { Link as ScrollLink } from "react-scroll";
+import NextLink from "next/link";
+import Image from "next/image";
+import { useState } from "react";
+import "./navbar.css";
+
+interface NavItem {
+  label: string;
+  to: string;
+}
+
+const navItems: NavItem[] = [
+  { label: "Home", to: "home" },
+  { label: "About", to: "about" },
+  { label: "Agenda", to: "agenda" },
+  { label: "Participants", to: "participants" },
+  { label: "Sponsors", to: "sponsors" },
+  { label: "Contact", to: "contact" },
+];
+
+export default function Navbar() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  return (
+    <header className="fixed top-6 left-0 right-0 z-50 flex justify-center">
+      <div
+        className="w-[92%] mx-auto max-w-[1280px] px-6 flex items-center justify-between
+          lg:w-full lg:mx-0
+          lg:bg-transparent lg:border-none lg:backdrop-blur-0 lg:shadow-none
+          bg-white/5 backdrop-blur-xl border border-white/10 rounded-full py-3 shadow-[0_8px_32px_rgba(0,0,0,0.25)]"
+      >
+        {/* Logo */}
+        {/* Logo */}
+        <ScrollLink
+          to="home"
+          smooth
+          duration={450}
+          offset={-100}
+          spy
+          className="cursor-pointer flex items-center"
+          aria-label="Go to homepage"
+        >
+          <Image
+            src="/images/logo.png"
+            alt="IEDC ICET Logo"
+            width={60}
+            height={60}
+            priority
+          />
+        </ScrollLink>
+
+        {/* Desktop Navigation */}
+        <nav className="glass-nav hidden lg:flex items-center gap-10 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full px-12 py-4 shadow-lg">
+          {navItems.map((item) => (
+            <ScrollLink
+              key={item.to}
+              to={item.to}
+              smooth
+              duration={450}
+              offset={-100}
+              spy
+              activeClass="active"
+              className="nav-link text-[14px] font-medium tracking-[0.02em] text-white/60 hover:text-white transition-colors cursor-pointer"
+            >
+              {item.label}
+            </ScrollLink>
+          ))}
+        </nav>
+
+        {/* Right Side */}
+        <div className="flex items-center gap-4">
+          <button
+            className="hidden lg:inline-flex items-center justify-center rounded-full px-6 py-2.5 text-[14px] font-medium text-white shadow-lg transition hover:scale-105 bg-[var(--primary)] hover:bg-[var(--primary)]"
+          >
+            Register Now
+          </button>
+
+          {/* Mobile Toggle */}
+          <button
+            className="lg:hidden p-2 text-white hover:bg-white/10 rounded-full transition"
+            onClick={() => setMobileMenuOpen((prev) => !prev)}
+            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileMenuOpen}
+          >
+            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.nav
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            className="absolute top-[70px] w-[92%] bg-black/30 backdrop-blur-xl border border-white/20 rounded-2xl p-6 shadow-2xl lg:hidden"
+          >
+            <div className="flex flex-col gap-6 text-center">
+              {navItems.map((item) => (
+                <ScrollLink
+                  key={item.to}
+                  to={item.to}
+                  smooth
+                  duration={450}
+                  offset={-100}
+                  spy
+                  activeClass="text-purple-400"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-[16px] font-medium text-white hover:text-purple-400 cursor-pointer"
+                >
+                  {item.label}
+                </ScrollLink>
+              ))}
+            </div>
+          </motion.nav>
+        )}
+      </AnimatePresence>
+    </header>
+  );
+}

@@ -1,0 +1,36 @@
+.nav-link {
+  position: relative;
+}
+
+/* active link */
+.nav-link.active {
+  color: white;
+}
+
+/* dot indicator */
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 5px;
+  background: white;
+  border-radius: 50%;
+}
+
+.glass-nav {
+  position: relative;
+  overflow: hidden;
+}
+
+/* grain texture overlay */
+.glass-nav::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity: 0.18;
+  pointer-events: none;
+}
