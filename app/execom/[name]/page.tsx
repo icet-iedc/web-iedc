@@ -45,7 +45,6 @@ export default async function ExecomProfilePage({ params }: Props) {
         <div className="mt-10">
           <ProfileHeader member={member} />
           <SocialLinks member={member} />
-          <ProfileInfo member={member} />
         </div>
       </div>
     </main>
