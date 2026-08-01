@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Badge } from '@/components/ui/badge';
 import { ExecomMember } from '@/data/execom';
+import SocialLinks from './SocialLinks';
 
 export default function ProfileHeader({ member }: { member: ExecomMember }) {
   return (
@@ -45,6 +46,7 @@ export default function ProfileHeader({ member }: { member: ExecomMember }) {
         <p className="mt-1 text-sm text-white/40">
           {member.academicYear}
         </p>
+      <SocialLinks member={member} />
       </motion.div>
     </div>
   );

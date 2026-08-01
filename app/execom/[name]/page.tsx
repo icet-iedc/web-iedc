@@ -43,7 +43,6 @@ export default async function ExecomProfilePage({ params }: Props) {
       <div className="relative mx-auto max-w-5xl h-full flex flex-col justify-center mt-15">
         <div>
           <ProfileHeader member={member} />
-          <SocialLinks member={member} />
         </div>
       </div>
     </main>
