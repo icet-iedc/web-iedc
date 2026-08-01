@@ -41,14 +41,7 @@ export default async function ExecomProfilePage({ params }: Props) {
       <div className="pointer-events-none absolute left-1/2 top-0 h-[500px] w-[900px] -translate-x-1/2 rounded-full bg-[#D4AF37] opacity-[0.07] blur-[160px]" />
 
       <div className="relative mx-auto max-w-5xl">
-        <Link 
-          href="/execom"
-          className="-ml-3 inline-flex h-8 items-center gap-2 rounded-lg px-2.5 text-sm font-medium text-white/60 transition-colors hover:bg-white/5 hover:text-[#D4AF37]"
-        >
-          <ArrowLeft className="h-4 w-4" />
-          Back to Executive Committee
-        </Link>
-
+        
         <div className="mt-10">
           <ProfileHeader member={member} />
           <SocialLinks member={member} />

@@ -36,8 +36,11 @@ export default function ProfileHeader({ member }: { member: ExecomMember }) {
         <h1 className="mt-4 text-4xl font-bold tracking-tight text-white md:text-5xl">
           {member.fullName}
         </h1>
-        <p className="mt-3 text-white/50">
-          {member.department} · {member.academicYear}
+        <p className="mt-3 text-white/60">
+          {member.department}
+        </p>
+        <p className="mt-1 text-sm text-white/40">
+          {member.academicYear}
         </p>
       </motion.div>
     </div>
