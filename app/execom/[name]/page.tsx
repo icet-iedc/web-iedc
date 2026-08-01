@@ -37,12 +37,11 @@ export default async function ExecomProfilePage({ params }: Props) {
   if (!member) notFound();
 
   return (
-    <main className="relative min-h-screen bg-black px-6 py-32 md:px-10">
+    <main className="relative h-screen overflow-hidden bg-black px-6 py-32 md:px-10">
       <div className="pointer-events-none absolute left-1/2 top-0 h-[500px] w-[900px] -translate-x-1/2 rounded-full bg-[#D4AF37] opacity-[0.07] blur-[160px]" />
 
-      <div className="relative mx-auto max-w-5xl">
-        
-        <div className="mt-10">
+      <div className="relative mx-auto max-w-5xl h-full flex flex-col justify-center mt-15">
+        <div>
           <ProfileHeader member={member} />
           <SocialLinks member={member} />
         </div>

@@ -7,20 +7,23 @@ import { ExecomMember } from '@/data/execom';
 
 export default function ProfileHeader({ member }: { member: ExecomMember }) {
   return (
-    <div className="grid gap-10 md:grid-cols-[320px_1fr] md:items-center">
+    <div className="grid gap-10 md:grid-cols-[448px_1fr] md:items-center">
       <motion.div
         initial={{ opacity: 0, scale: 0.94 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        className="relative mx-auto h-72 w-72 overflow-hidden rounded-3xl border border-[#D4AF37]/30 shadow-[0_20px_60px_rgba(0,0,0,0.5)] md:mx-0 md:h-80 md:w-80"
+        className="relative mx-auto h-96 w-96 overflow-hidden rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.5)] md:mx-0 md:h-[28rem] md:w-[28rem]"
       >
         <Image
           src={member.photo}
           alt={member.fullName}
           fill
           className="object-cover"
-          sizes="320px"
+          sizes="(max-width: 768px) 384px, 448px"
           priority
+          style={{
+            objectPosition: "center 15%",
+          }}
         />
       </motion.div>
 
@@ -30,12 +33,12 @@ export default function ProfileHeader({ member }: { member: ExecomMember }) {
         transition={{ duration: 0.6, delay: 0.15 }}
         className="text-center md:text-left"
       >
-        <Badge className="border-[#D4AF37]/40 bg-[#D4AF37]/10 text-[#D4AF37] hover:bg-[#D4AF37]/10">
-          {member.role}
-        </Badge>
-        <h1 className="mt-4 text-4xl font-bold tracking-tight text-white md:text-5xl">
+        <h1 className="text-4xl font-bold tracking-tight text-white md:text-5xl">
           {member.fullName}
         </h1>
+        <h2 className="mt-4 text-2xl font-semibold tracking-tight text-[#D4AF37] md:text-3xl">
+          {member.role}
+        </h2>
         <p className="mt-3 text-white/60">
           {member.department}
         </p>
