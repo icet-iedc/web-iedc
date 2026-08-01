@@ -12,7 +12,7 @@ export default function ProfileHeader({ member }: { member: ExecomMember }) {
         initial={{ opacity: 0, scale: 0.94 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        className="relative mx-auto h-96 w-96 overflow-hidden rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.5)] md:mx-0 md:h-[28rem] md:w-[28rem]"
+        className="relative mx-auto h-96 w-full overflow-hidden rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.5)] md:mx-0 md:h-[28rem] md:w-full"
       >
         <Image
           src={member.photo}
@@ -33,7 +33,7 @@ export default function ProfileHeader({ member }: { member: ExecomMember }) {
         transition={{ duration: 0.6, delay: 0.15 }}
         className="text-center md:text-left"
       >
-        <h1 className="text-4xl font-bold tracking-tight text-white md:text-5xl">
+        <h1 className="text-3xl font-bold tracking-tight text-white md:text-5xl">
           {member.fullName}
         </h1>
         <h2 className="mt-4 text-2xl font-semibold tracking-tight text-[#D4AF37] md:text-3xl">
