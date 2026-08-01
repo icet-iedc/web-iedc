@@ -1,7 +1,0 @@
-allowBuilds:
-  sharp: false
-ignoredBuiltDependencies:
-  - sharp
-  - unrs-resolver
-minimumReleaseAgeExclude:
-  - shadcn@4.16.1
