@@ -11,12 +11,14 @@ import "./navbar.css";
 interface NavItem {
   label: string;
   to: string;
+  isExternal?: boolean;
 }
 
 const navItems: NavItem[] = [
   { label: "Home", to: "home" },
   { label: "About", to: "about" },
   { label: "Agenda", to: "agenda" },
+  { label: "Execom", to: "/execom", isExternal: true },
   { label: "Participants", to: "participants" },
   { label: "Sponsors", to: "sponsors" },
   { label: "Contact", to: "contact" },
@@ -34,13 +36,8 @@ export default function Navbar() {
           bg-white/5 backdrop-blur-xl border border-white/10 rounded-full py-3 shadow-[0_8px_32px_rgba(0,0,0,0.25)]"
       >
         {/* Logo */}
-        {/* Logo */}
-        <ScrollLink
-          to="home"
-          smooth
-          duration={450}
-          offset={-100}
-          spy
+        <NextLink
+          href="/"
           className="cursor-pointer flex items-center"
           aria-label="Go to homepage"
         >
@@ -52,24 +49,34 @@ export default function Navbar() {
             priority
             style={{ width: 'auto', height: 'auto' }}
           />
-        </ScrollLink>
+        </NextLink>
 
         {/* Desktop Navigation */}
         <nav className="glass-nav hidden lg:flex items-center gap-10 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full px-12 py-4 shadow-lg">
-          {navItems.map((item) => (
-            <ScrollLink
-              key={item.to}
-              to={item.to}
-              smooth
-              duration={450}
-              offset={-100}
-              spy
-              activeClass="active"
-              className="nav-link text-[14px] font-medium tracking-[0.02em] text-white/60 hover:text-white transition-colors cursor-pointer"
-            >
-              {item.label}
-            </ScrollLink>
-          ))}
+          {navItems.map((item) => 
+            item.isExternal ? (
+              <NextLink
+                key={item.to}
+                href={item.to}
+                className="nav-link text-[14px] font-medium tracking-[0.02em] text-white/60 hover:text-white transition-colors cursor-pointer"
+              >
+                {item.label}
+              </NextLink>
+            ) : (
+              <ScrollLink
+                key={item.to}
+                to={item.to}
+                smooth
+                duration={450}
+                offset={-100}
+                spy
+                activeClass="active"
+                className="nav-link text-[14px] font-medium tracking-[0.02em] text-white/60 hover:text-white transition-colors cursor-pointer"
+              >
+                {item.label}
+              </ScrollLink>
+            )
+          )}
         </nav>
 
         {/* Right Side */}
@@ -102,21 +109,32 @@ export default function Navbar() {
             className="absolute top-[70px] w-[92%] bg-black/30 backdrop-blur-xl border border-white/20 rounded-2xl p-6 shadow-2xl lg:hidden"
           >
             <div className="flex flex-col gap-6 text-center">
-              {navItems.map((item) => (
-                <ScrollLink
-                  key={item.to}
-                  to={item.to}
-                  smooth
-                  duration={450}
-                  offset={-100}
-                  spy
-                  activeClass="text-purple-400"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="text-[16px] font-medium text-white hover:text-purple-400 cursor-pointer"
-                >
-                  {item.label}
-                </ScrollLink>
-              ))}
+              {navItems.map((item) =>
+                item.isExternal ? (
+                  <NextLink
+                    key={item.to}
+                    href={item.to}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-[16px] font-medium text-white hover:text-purple-400"
+                  >
+                    {item.label}
+                  </NextLink>
+                ) : (
+                  <ScrollLink
+                    key={item.to}
+                    to={item.to}
+                    smooth
+                    duration={450}
+                    offset={-100}
+                    spy
+                    activeClass="text-purple-400"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-[16px] font-medium text-white hover:text-purple-400 cursor-pointer"
+                  >
+                    {item.label}
+                  </ScrollLink>
+                )
+              )}
             </div>
           </motion.nav>
         )}
