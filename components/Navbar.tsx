@@ -50,6 +50,7 @@ export default function Navbar() {
             width={60}
             height={60}
             priority
+            style={{ width: 'auto', height: 'auto' }}
           />
         </ScrollLink>
 
