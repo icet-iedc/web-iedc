@@ -34,16 +34,16 @@ export default function ProfileHeader({ member }: { member: ExecomMember }) {
         transition={{ duration: 0.6, delay: 0.15 }}
         className="text-center md:text-left"
       >
-        <h1 className="text-3xl font-bold tracking-tight text-white md:text-5xl">
+        <h1 className="text-3xl font-bold tracking-tight text-white md:text-5xl text-transform: uppercase">
           {member.fullName}
         </h1>
-        <h2 className="mt-4 text-2xl font-semibold tracking-tight text-[#D4AF37] md:text-3xl">
+        <h2 className="mt-4 text-2xl font-semibold tracking-tight text-[#D4AF37] md:text-3xl text-transform: uppercase">
           {member.role}
         </h2>
-        <p className="mt-3 text-white/60">
+        <p className="mt-3 text-white/60 text-transform: uppercase">
           {member.department}
         </p>
-        <p className="mt-1 text-sm text-white/40">
+        <p className="mt-1 text-sm text-white/40 ">
           {member.academicYear}
         </p>
       <SocialLinks member={member} />
