@@ -6,7 +6,7 @@ import { ArrowLeft, Calendar, Sparkles } from 'lucide-react';
 
 export default function EventsPage() {
   return (
-    <div className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20">
+    <div className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20 mt-8">
       {/* Background Elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#D4AF37]/10 rounded-full blur-3xl" />
