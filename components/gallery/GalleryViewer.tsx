@@ -15,16 +15,22 @@ export default function GalleryViewer({ collection }: GalleryViewerProps) {
   const [imageDirection, setImageDirection] = useState(0);
 
   const handlePrevious = useCallback(() => {
+    setImageDirection(-1);
     if (currentIndex > 0) {
-      setImageDirection(-1);
       setCurrentIndex((prev) => prev - 1);
+    } else {
+      // Go to last image when at first
+      setCurrentIndex(collection.images.length - 1);
     }
-  }, [currentIndex]);
+  }, [currentIndex, collection.images.length]);
 
   const handleNext = useCallback(() => {
+    setImageDirection(1);
     if (currentIndex < collection.images.length - 1) {
-      setImageDirection(1);
       setCurrentIndex((prev) => prev + 1);
+    } else {
+      // Go to first image when at last
+      setCurrentIndex(0);
     }
   }, [currentIndex, collection.images.length]);
 
@@ -50,8 +56,6 @@ export default function GalleryViewer({ collection }: GalleryViewerProps) {
   }, [handlePrevious, handleNext]);
 
   const currentImage = collection.images[currentIndex];
-  const isFirst = currentIndex === 0;
-  const isLast = currentIndex === collection.images.length - 1;
 
   return (
     <div className="flex flex-col items-center w-full bg-black/90">
@@ -60,11 +64,10 @@ export default function GalleryViewer({ collection }: GalleryViewerProps) {
         {/* Previous Button */}
         <button
           onClick={handlePrevious}
-          disabled={isFirst}
           aria-label="Previous image"
-          className="group flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 hover:bg-gray-200 transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:bg-gray-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-400 flex-shrink-0"
+          className="group flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 hover:bg-gray-200 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-400 flex-shrink-0"
         >
-          <ChevronLeft className="w-6 h-6 text-gray-700 transition-transform duration-300 group-hover:-translate-x-0.5 group-disabled:translate-x-0" />
+          <ChevronLeft className="w-6 h-6 text-gray-700 transition-transform duration-300 group-hover:-translate-x-0.5" />
         </button>
 
         {/* Main Image - Fixed container size */}
@@ -91,11 +94,10 @@ export default function GalleryViewer({ collection }: GalleryViewerProps) {
         {/* Next Button */}
         <button
           onClick={handleNext}
-          disabled={isLast}
           aria-label="Next image"
-          className="group flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 hover:bg-gray-200 transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:bg-gray-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-400 flex-shrink-0"
+          className="group flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 hover:bg-gray-200 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-400 flex-shrink-0"
         >
-          <ChevronRight className="w-6 h-6 text-gray-700 transition-transform duration-300 group-hover:translate-x-0.5 group-disabled:translate-x-0" />
+          <ChevronRight className="w-6 h-6 text-gray-700 transition-transform duration-300 group-hover:translate-x-0.5" />
         </button>
       </div>
 
