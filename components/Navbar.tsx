@@ -5,7 +5,7 @@ import { Menu, X } from "lucide-react";
 import { Link as ScrollLink } from "react-scroll";
 import NextLink from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import "./navbar.css";
 
 interface NavItem {
@@ -26,9 +26,27 @@ const navItems: NavItem[] = [
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    if (mobileMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [mobileMenuOpen]);
 
   return (
-    <header className="fixed top-6 left-0 right-0 z-50 flex justify-center">
+    <header className="fixed top-6 left-0 right-0 z-50 flex justify-center" ref={menuRef}>
       <div
         className="w-[92%] mx-auto max-w-[1280px] px-6 flex items-center justify-between
           lg:w-full lg:mx-0
