@@ -8,6 +8,7 @@ import ExecomSection from '@/components/ExecomSection';
 import LatestGallery from '@/components/gallery/LatestGallery';
 import Footer from '@/components/Footer';
 import RecentEvent from '@/components/events/RecentEvent';
+import LatestAchievements from '@/components/achievements/LatestAchievements';
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <ProgramsSection />
       <StartupsSection />
       <ExecomSection />
+      <LatestAchievements />
       <LatestGallery />
       <Footer />
     </div>
