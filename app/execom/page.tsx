@@ -26,7 +26,7 @@ export default async function ExecomPage() {
           </p>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 gap-4 sm:mt-16 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
+        <div className="mt-12 grid grid-cols-2 gap-6 sm:mt-16 sm:gap-8 lg:grid-cols-4">
           {members.map((member, index) => (
             <ExecomCard key={member.id} member={member} index={index} />
           ))}
