@@ -4,6 +4,7 @@ import AboutSection from '@/components/AboutSection';
 import StatsSection from '@/components/StatsSection';
 import ProgramsSection from '@/components/ProgramsSection';
 import StartupsSection from '@/components/StartupsSection';
+import ExecomSection from '@/components/ExecomSection';
 import LatestGallery from '@/components/gallery/LatestGallery';
 import Footer from '@/components/Footer';
 
@@ -16,6 +17,7 @@ export default function Home() {
       <StatsSection />
       <ProgramsSection />
       <StartupsSection />
+      <ExecomSection />
       <LatestGallery />
       <Footer />
     </div>
