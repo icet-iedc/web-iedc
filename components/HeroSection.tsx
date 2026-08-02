@@ -74,16 +74,17 @@ export default function HeroSection() {
               community built for people who&apos;d rather ship than wait.
             </motion.p>
 
+            {/* Buttons */}
             <motion.div
               {...fade(0.45, 16)}
-              className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-4"
+              className="mt-10 flex flex-row items-center gap-3 sm:gap-4"
             >
-              <button className="group inline-flex items-center gap-2 bg-[var(--primary)] text-[#F2EFE9] px-7 py-3.5 rounded-md font-medium text-sm tracking-wide transition-transform duration-300 hover:-translate-y-0.5">
+              <button className="group inline-flex items-center justify-center gap-2 bg-[var(--primary)] text-[#F2EFE9] px-4 sm:px-7 py-3.5 rounded-md font-medium text-sm tracking-wide transition-transform duration-300 hover:-translate-y-0.5 whitespace-nowrap">
                 Explore IEDC
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </button>
 
-              <button className="group relative px-7 py-3.5 font-mono text-sm tracking-wide text-[#F2EFE9] transition-colors duration-300 hover:text-[var(--primary)]">
+              <button className="group relative inline-flex items-center justify-center px-4 sm:px-7 py-3.5 font-mono text-sm tracking-wide text-[#F2EFE9] transition-colors duration-300 hover:text-[var(--primary)] whitespace-nowrap">
                 <CornerBrackets />
                 Join Community
               </button>
@@ -108,7 +109,11 @@ export default function HeroSection() {
 
 function RegistrationMark({ className = '' }: { className?: string }) {
   return (
-    <svg className={`absolute w-6 h-6 text-white/20 pointer-events-none ${className}`} viewBox="0 0 24 24" fill="none">
+    <svg
+      className={`absolute w-6 h-6 text-white/20 pointer-events-none ${className}`}
+      viewBox="0 0 24 24"
+      fill="none"
+    >
       <path d="M12 0V24M0 12H24" stroke="currentColor" strokeWidth="1" />
       <circle cx="12" cy="12" r="7" stroke="currentColor" strokeWidth="1" />
     </svg>
@@ -130,18 +135,38 @@ function AnnotationCallout({ label }: { label: string }) {
   return (
     <span className="hidden md:inline-flex absolute left-[104%] top-1/2 -translate-y-1/2 items-center whitespace-nowrap">
       <svg width="72" height="2" className="text-white/20">
-        <line x1="0" y1="1" x2="72" y2="1" stroke="currentColor" strokeWidth="1" strokeDasharray="2 3" />
+        <line
+          x1="0"
+          y1="1"
+          x2="72"
+          y2="1"
+          stroke="currentColor"
+          strokeWidth="1"
+          strokeDasharray="2 3"
+        />
       </svg>
-      <span className="ml-2 font-mono text-xs tracking-wide text-[#8B93A6]">{label}</span>
+      <span className="ml-2 font-mono text-xs tracking-wide text-[#8B93A6]">
+        {label}
+      </span>
     </span>
   );
 }
 
-function SpecLine({ k, v, accent = false }: { k: string; v: string; accent?: boolean }) {
+function SpecLine({
+  k,
+  v,
+  accent = false,
+}: {
+  k: string;
+  v: string;
+  accent?: boolean;
+}) {
   return (
     <div className="flex justify-between gap-6 py-1 border-b border-white/5 last:border-0">
       <span>{k}</span>
-      <span className={accent ? 'text-[var(--primary)]' : 'text-[#F2EFE9]'}>{v}</span>
+      <span className={accent ? 'text-[var(--primary)]' : 'text-[#F2EFE9]'}>
+        {v}
+      </span>
     </div>
   );
 }
