@@ -7,6 +7,7 @@ import StartupsSection from '@/components/StartupsSection';
 import ExecomSection from '@/components/ExecomSection';
 import LatestGallery from '@/components/gallery/LatestGallery';
 import Footer from '@/components/Footer';
+import RecentEvent from '@/components/events/RecentEvent';
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <TrustSection />
       <AboutSection />
       <StatsSection />
+      <RecentEvent />
       <ProgramsSection />
       <StartupsSection />
       <ExecomSection />
