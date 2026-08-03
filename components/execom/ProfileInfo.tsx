@@ -15,7 +15,7 @@ function InfoRow({
 }) {
   return (
     <div className="flex items-start gap-3 py-3">
-      <Icon className="mt-0.5 h-4 w-4 shrink-0 text-white" />
+      <Icon className="mt-0.5 h-4 w-4 shrink-0 text-[#D4AF37]" />
       <div>
         <p className="text-xs uppercase tracking-wide text-white/40">{label}</p>
         <p className="text-sm text-white">{value}</p>

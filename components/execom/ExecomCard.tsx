@@ -24,7 +24,7 @@ export default function ExecomCard({
         className="group flex flex-col items-center text-center"
       >
         {/* Circular Photo */}
-        <div className="relative h-24 w-24 sm:h-36 sm:w-36 md:h-36 md:w-36 overflow-hidden rounded-full ring-2 ring-white sm:ring-white/10 transition-all duration-300 group-hover:scale-110 sm:group-hover:ring-white">
+        <div className="relative h-24 w-24 sm:h-36 sm:w-36 md:h-36 md:w-36 overflow-hidden rounded-full ring-2 ring-[#D4AF37] sm:ring-white/10 transition-all duration-300 group-hover:scale-110 sm:group-hover:ring-[#D4AF37]">
           <Image
             src={member.photo}
             alt={member.fullName}
@@ -39,7 +39,7 @@ export default function ExecomCard({
         </h3>
 
         {/* Role */}
-        <p className="mt-1 text-xs font-medium text-white/75 sm:text-sm">{member.role}</p>
+        <p className="mt-1 text-xs font-medium text-[#D4AF37] sm:text-sm">{member.role}</p>
       </Link>
     </motion.div>
   );

@@ -20,7 +20,7 @@ export default function AchievementCard({ achievement, index }: AchievementCardP
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="group flex flex-col h-full"
     >
-      <div className="relative flex flex-col h-full bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden transition-all duration-500 hover:bg-white/10 hover:border-white/30 hover:shadow-[0_0_40px_rgba(255,255,255,0.2)] hover:-translate-y-2">
+      <div className="relative flex flex-col h-full bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden transition-all duration-500 hover:bg-white/10 hover:border-[#D4AF37]/40 hover:shadow-[0_0_40px_rgba(212,175,55,0.2)] hover:-translate-y-2">
         {/* Image Container */}
         <div className="relative w-full aspect-[4/3] overflow-hidden">
           <Image
@@ -36,7 +36,7 @@ export default function AchievementCard({ achievement, index }: AchievementCardP
           
           {/* Category Badge */}
           <div className="absolute top-4 left-4">
-            <Badge className="bg-white/90 text-black border-none font-semibold backdrop-blur-sm">
+            <Badge className="bg-[#D4AF37]/90 text-[#111111] border-none font-semibold backdrop-blur-sm">
               {achievement.category}
             </Badge>
           </div>
@@ -44,8 +44,8 @@ export default function AchievementCard({ achievement, index }: AchievementCardP
           {/* Year Badge */}
           <div className="absolute top-4 right-4">
             <div className="flex items-center gap-1.5 px-3 py-1.5 bg-black/60 backdrop-blur-md border border-white/20 rounded-full">
-              <Calendar className="w-3.5 h-3.5 text-white" />
-              <span className="text-sm font-medium text-white">{achievement.year}</span>
+              <Calendar className="w-3.5 h-3.5 text-[#D4AF37]" />
+              <span className="text-sm font-medium text-[#D4AF37]">{achievement.year}</span>
             </div>
           </div>
         </div>
