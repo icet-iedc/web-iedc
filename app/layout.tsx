@@ -14,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
+    <html lang="en" className="dark" data-scroll-behavior="smooth" suppressHydrationWarning>
       <body className="bg-[#111111] text-white overflow-x-hidden" suppressHydrationWarning>
         <TooltipProvider>
           <Navbar />

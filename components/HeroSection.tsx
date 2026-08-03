@@ -16,19 +16,19 @@ export default function HeroSection() {
         };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-[#0A0E1A]">
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-black">
       {/* Blueprint grid */}
       <div
         className="absolute inset-0 opacity-[0.35] pointer-events-none"
         style={{
           backgroundImage:
-            'linear-gradient(to right, rgba(139,147,166,0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(139,147,166,0.08) 1px, transparent 1px)',
+            'linear-gradient(to right, rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.08) 1px, transparent 1px)',
           backgroundSize: '64px 64px',
         }}
       />
 
       {/* Single restrained light source, tied to brand color */}
-      <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full bg-[var(--primary)] opacity-[0.12] blur-[160px] pointer-events-none" />
+      <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full bg-white opacity-[0.12] blur-[160px] pointer-events-none" />
 
       {/* Registration marks */}
       <RegistrationMark className="top-8 left-8" />
@@ -42,16 +42,16 @@ export default function HeroSection() {
             {/* Eyebrow */}
             <motion.div
               {...fade(0)}
-              className="flex items-center gap-3 mb-8 font-mono text-xs tracking-[0.25em] text-[#8B93A6] uppercase"
+              className="flex items-center gap-3 mb-8 font-mono text-xs tracking-[0.25em] text-white/55 uppercase"
             >
-              <span className="w-8 h-px bg-[#8B93A6]" />
+              <span className="w-8 h-px bg-white/55" />
               IEDC · ICET — Build Log №014
             </motion.div>
 
             {/* Headline */}
             <motion.h1
               {...fade(0.1, 26)}
-              className="text-5xl md:text-7xl lg:text-[5.25rem] font-bold leading-[0.98] tracking-tight text-[#F2EFE9]"
+              className="text-5xl md:text-7xl lg:text-[5.25rem] font-bold leading-[0.98] tracking-tight text-white"
             >
               Empowering{' '}
               <span className="relative inline-block text-[var(--primary)]">
@@ -67,7 +67,7 @@ export default function HeroSection() {
 
             <motion.p
               {...fade(0.3, 16)}
-              className="mt-8 max-w-xl text-base md:text-lg text-[#8B93A6] leading-relaxed"
+              className="mt-8 max-w-xl text-base md:text-lg text-white/55 leading-relaxed"
             >
               IEDC ICET turns engineering students into founders — through
               entrepreneurship programs, hands-on labs, mentorship, and a
@@ -79,12 +79,12 @@ export default function HeroSection() {
               {...fade(0.45, 16)}
               className="mt-10 flex flex-row items-center gap-3 sm:gap-4"
             >
-              <button className="group inline-flex items-center justify-center gap-2 bg-[var(--primary)] text-[#F2EFE9] px-4 sm:px-7 py-3.5 rounded-md font-medium text-sm tracking-wide transition-transform duration-300 hover:-translate-y-0.5 whitespace-nowrap">
+              <button className="group inline-flex items-center justify-center gap-2 bg-white text-black px-4 sm:px-7 py-3.5 rounded-md font-medium text-sm tracking-wide transition-transform duration-300 hover:-translate-y-0.5 whitespace-nowrap">
                 Explore IEDC
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </button>
 
-              <button className="group relative inline-flex items-center justify-center px-4 sm:px-7 py-3.5 font-mono text-sm tracking-wide text-[#F2EFE9] transition-colors duration-300 hover:text-[var(--primary)] whitespace-nowrap">
+              <button className="group relative inline-flex items-center justify-center px-4 sm:px-7 py-3.5 font-mono text-sm tracking-wide text-white transition-colors duration-300 hover:text-white/70 whitespace-nowrap">
                 <CornerBrackets />
                 Join Community
               </button>
@@ -94,7 +94,7 @@ export default function HeroSection() {
           {/* Spec sheet — desktop only */}
           <motion.div
             {...fade(0.55, 0)}
-            className="hidden lg:block border-l border-white/10 pl-8 font-mono text-xs text-[#8B93A6] leading-loose"
+            className="hidden lg:block border-l border-white/10 pl-8 font-mono text-xs text-white/55 leading-loose"
           >
             <SpecLine k="EST." v="2019" />
             <SpecLine k="MEMBERS" v="300+" />
@@ -145,7 +145,7 @@ function AnnotationCallout({ label }: { label: string }) {
           strokeDasharray="2 3"
         />
       </svg>
-      <span className="ml-2 font-mono text-xs tracking-wide text-[#8B93A6]">
+      <span className="ml-2 font-mono text-xs tracking-wide text-white/55">
         {label}
       </span>
     </span>
@@ -164,7 +164,7 @@ function SpecLine({
   return (
     <div className="flex justify-between gap-6 py-1 border-b border-white/5 last:border-0">
       <span>{k}</span>
-      <span className={accent ? 'text-[var(--primary)]' : 'text-[#F2EFE9]'}>
+      <span className={accent ? 'text-white' : 'text-[#F2EFE9]'}>
         {v}
       </span>
     </div>

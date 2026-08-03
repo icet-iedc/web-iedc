@@ -33,7 +33,7 @@ export default function EventInfo({ event }: EventInfoProps) {
           <Badge
             key={index}
             variant="secondary"
-            className="bg-[#D4AF37]/10 text-[#D4AF37] border border-[#D4AF37]/20 hover:bg-[#D4AF37]/20 transition-colors duration-300"
+            className="bg-white/10 text-white border border-white/20 hover:bg-white/20 transition-colors duration-300"
           >
             <Tag className="w-3 h-3 mr-1" />
             {tag}
@@ -51,7 +51,7 @@ export default function EventInfo({ event }: EventInfoProps) {
         <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-3">
           {event.title}
         </h3>
-        <p className="text-lg sm:text-xl text-[#D4AF37] font-medium">
+        <p className="text-lg sm:text-xl text-white font-medium">
           {event.subtitle}
         </p>
       </motion.div>
@@ -80,8 +80,8 @@ export default function EventInfo({ event }: EventInfoProps) {
             key={index}
             className="flex items-start gap-3 p-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:bg-white/10 transition-colors duration-300"
           >
-            <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-lg bg-[#D4AF37]/10 border border-[#D4AF37]/20">
-              <item.icon className="w-5 h-5 text-[#D4AF37]" />
+            <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-lg bg-white/10 border border-white/20">
+              <item.icon className="w-5 h-5 text-white" />
             </div>
             <div className="flex-1 min-w-0">
               <p className="text-sm text-gray-400 mb-1">{item.label}</p>
@@ -106,10 +106,10 @@ export default function EventInfo({ event }: EventInfoProps) {
           variant={event.registrationStatus === 'Open' ? 'default' : 'secondary'}
           className={`${
             event.registrationStatus === 'Open'
-              ? 'bg-green-500/20 text-green-400 border-green-500/30'
+              ? 'bg-white/20 text-white border-white/30'
               : event.registrationStatus === 'Closed'
-              ? 'bg-red-500/20 text-red-400 border-red-500/30'
-              : 'bg-[#D4AF37]/20 text-[#D4AF37] border-[#D4AF37]/30'
+              ? 'bg-white/10 text-white/55 border-white/20'
+              : 'bg-white/15 text-white/80 border-white/25'
           } border`}
         >
           {event.registrationStatus}
@@ -125,7 +125,7 @@ export default function EventInfo({ event }: EventInfoProps) {
       >
         <Link
           href="/events"
-          className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-[#D4AF37] to-[#FFD700] text-[#111111] font-semibold rounded-xl hover:shadow-[0_0_30px_rgba(212,175,55,0.4)] transition-all duration-300 hover:scale-105"
+          className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-white to-zinc-300 text-black font-semibold rounded-xl hover:shadow-[0_0_30px_rgba(255,255,255,0.35)] transition-all duration-300 hover:scale-105"
         >
           View Details
         </Link>

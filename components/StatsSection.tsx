@@ -23,9 +23,9 @@ export default function StatsSection() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
               whileHover={{ scale: 1.05, y: -5 }}
-              className="glass rounded-3xl p-8 text-center group hover:bg-white/10 transition-all duration-300 hover:shadow-[0_0_40px_rgba(212,175,55,0.15)]"
+              className="glass rounded-3xl p-8 text-center group hover:bg-white/10 transition-all duration-300 hover:shadow-[0_0_40px_rgba(255,255,255,0.15)]"
             >
-              <stat.icon className="w-10 h-10 mx-auto mb-4 text-[#D4AF37] group-hover:scale-110 transition-transform duration-300" />
+              <stat.icon className="w-10 h-10 mx-auto mb-4 text-white group-hover:scale-110 transition-transform duration-300" />
               <h3 className="text-4xl md:text-5xl font-bold mb-2 gold-gradient">
                 {stat.value}
               </h3>

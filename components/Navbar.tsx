@@ -133,7 +133,7 @@ export default function Navbar() {
                     key={item.to}
                     href={item.to}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="text-[16px] font-medium text-white hover:text-purple-400"
+                    className="text-[16px] font-medium text-white hover:text-white/70"
                   >
                     {item.label}
                   </NextLink>
@@ -145,9 +145,9 @@ export default function Navbar() {
                     duration={450}
                     offset={-100}
                     spy
-                    activeClass="text-purple-400"
+                    activeClass="text-white/70"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="text-[16px] font-medium text-white hover:text-purple-400 cursor-pointer"
+                    className="text-[16px] font-medium text-white hover:text-white/70 cursor-pointer"
                   >
                     {item.label}
                   </ScrollLink>

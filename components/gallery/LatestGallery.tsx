@@ -44,19 +44,19 @@ export default function LatestGallery() {
 
   return (
     <>
-      <section className="relative py-24 md:py-32 overflow-hidden bg-[#0A0E1A]">
+      <section className="relative py-24 md:py-32 overflow-hidden bg-black">
         {/* Background Grid */}
         <div
           className="absolute inset-0 opacity-[0.25] pointer-events-none"
           style={{
             backgroundImage:
-              'linear-gradient(to right, rgba(139,147,166,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(139,147,166,0.06) 1px, transparent 1px)',
+              'linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px)',
             backgroundSize: '64px 64px',
           }}
         />
 
         {/* Subtle Glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full bg-[#D4AF37] opacity-[0.08] blur-[150px] pointer-events-none" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full bg-white opacity-[0.08] blur-[150px] pointer-events-none" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10">
           {/* Section Header */}
@@ -66,8 +66,8 @@ export default function LatestGallery() {
               {...fade(0)}
               className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm"
             >
-              <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse" />
-              <span className="font-mono text-xs tracking-wider text-[#8B93A6] uppercase">
+              <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
+              <span className="font-mono text-xs tracking-wider text-white/55 uppercase">
                 Gallery
               </span>
             </motion.div>
@@ -75,17 +75,17 @@ export default function LatestGallery() {
             {/* Heading */}
             <motion.h2
               {...fade(0.1, 26)}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-[#F2EFE9] mb-4"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-white mb-4"
             >
               Capturing Innovation,
               <br />
-              <span className="text-[#D4AF37]">One Moment at a Time</span>
+              <span className="text-white/75">One Moment at a Time</span>
             </motion.h2>
 
             {/* Subtitle */}
             <motion.p
               {...fade(0.2, 16)}
-              className="max-w-2xl mx-auto text-base md:text-lg text-[#8B93A6] leading-relaxed"
+              className="max-w-2xl mx-auto text-base md:text-lg text-white/55 leading-relaxed"
             >
               Explore highlights from our latest workshops, hackathons, startup events,
               and community activities.
@@ -111,7 +111,7 @@ export default function LatestGallery() {
           >
             <button
               onClick={handleViewAllClick}
-              className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm text-white font-medium transition-all duration-300 hover:bg-[#D4AF37]/10 hover:border-[#D4AF37]/40 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#D4AF37]/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0E1A]"
+              className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm text-white font-medium transition-all duration-300 hover:bg-white/10 hover:border-white/30 hover:-translate-y-1 hover:shadow-lg hover:shadow-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black"
             >
               <span>View All Gallery</span>
               <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />

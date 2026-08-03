@@ -11,14 +11,14 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative border-t border-[#D4AF37]/20 mt-32">
+    <footer className="relative border-t border-white/10 mt-32">
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           {/* Logo & Description */}
           <div className="md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#D4AF37] to-[#FFD700] flex items-center justify-center">
-                <Sparkles className="w-6 h-6 text-[#111111]" />
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-white to-zinc-400 flex items-center justify-center">
+                <Sparkles className="w-6 h-6 text-black" />
               </div>
               <span className="text-xl font-bold">IEDC ICET</span>
             </div>
@@ -30,7 +30,7 @@ export default function Footer() {
           {/* Links Columns */}
           {Object.entries(links).map(([title, items]) => (
             <div key={title}>
-              <h4 className="text-sm font-bold text-[#D4AF37] mb-4 uppercase tracking-wider">
+              <h4 className="text-sm font-bold text-white mb-4 uppercase tracking-wider">
                 {title}
               </h4>
               <ul className="space-y-3">
@@ -55,13 +55,13 @@ export default function Footer() {
             © 2026 IEDC ICET — Engineering the Future
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-[#A8A8A8] hover:text-[#D4AF37] transition-colors duration-300 text-sm">
+            <a href="#" className="text-[#A8A8A8] hover:text-white transition-colors duration-300 text-sm">
               Privacy
             </a>
-            <a href="#" className="text-[#A8A8A8] hover:text-[#D4AF37] transition-colors duration-300 text-sm">
+            <a href="#" className="text-[#A8A8A8] hover:text-white transition-colors duration-300 text-sm">
               Terms
             </a>
-            <a href="#" className="text-[#A8A8A8] hover:text-[#D4AF37] transition-colors duration-300 text-sm">
+            <a href="#" className="text-[#A8A8A8] hover:text-white transition-colors duration-300 text-sm">
               Sitemap
             </a>
           </div>
