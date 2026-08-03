@@ -9,8 +9,8 @@ export default function EventsPage() {
     <div className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20 mt-8">
       {/* Background Elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#D4AF37] rounded-full blur-3xl opacity-30 animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#D4AF37] rounded-full blur-3xl opacity-30 animate-pulse" />
       </div>
 
       <div className="relative max-w-3xl mx-auto text-center">
@@ -22,9 +22,9 @@ export default function EventsPage() {
           className="flex justify-center mb-8"
         >
           <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-white to-zinc-400 rounded-full blur-2xl opacity-30 animate-pulse" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#D4AF37] to-[#FFD700] rounded-full blur-2xl opacity-30 animate-pulse" />
             <div className="relative w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-full">
-              <Calendar className="w-10 h-10 sm:w-12 sm:h-12 text-white" />
+              <Calendar className="w-10 h-10 sm:w-12 sm:h-12 text-[#D4AF37]" />
             </div>
           </div>
         </motion.div>
@@ -37,7 +37,7 @@ export default function EventsPage() {
         >
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
             Events{' '}
-            <span className="bg-gradient-to-r from-white to-zinc-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#D4AF37] to-[#FFD700] bg-clip-text text-transparent">
               Coming Soon
             </span>
           </h1>
@@ -69,7 +69,7 @@ export default function EventsPage() {
               key={index}
               className="flex items-center justify-center gap-2 p-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl"
             >
-              <item.icon className="w-5 h-5 text-white" />
+              <item.icon className="w-5 h-5 text-[#D4AF37]" />
               <span className="text-sm sm:text-base text-white font-medium">{item.text}</span>
             </div>
           ))}
@@ -83,7 +83,7 @@ export default function EventsPage() {
         >
           <Link
             href="/"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-white to-zinc-300 text-black font-semibold rounded-xl hover:shadow-[0_0_30px_rgba(255,255,255,0.35)] transition-all duration-300 hover:scale-105"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#D4AF37] to-[#FFD700] text-[#111111] font-semibold rounded-xl hover:shadow-[0_0_30px_rgba(212,175,55,0.4)] transition-all duration-300 hover:scale-105"
           >
             <ArrowLeft className="w-5 h-5" />
             Back to Home

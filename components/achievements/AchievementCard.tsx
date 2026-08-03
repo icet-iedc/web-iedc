@@ -53,12 +53,12 @@ export default function AchievementCard({ achievement, index }: AchievementCardP
         {/* Content */}
         <div className="flex flex-col flex-1 p-6">
           {/* Title */}
-          <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 transition-colors duration-300 group-hover:text-white/75">
+          <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 transition-colors duration-300 group-hover:text-[#D4AF37]">
             {achievement.title}
           </h3>
           
           {/* Subtitle */}
-          <p className="text-sm sm:text-base text-white font-medium mb-3">
+          <p className="text-sm sm:text-base text-[#D4AF37] font-medium mb-3">
             {achievement.subtitle}
           </p>
           
@@ -69,7 +69,7 @@ export default function AchievementCard({ achievement, index }: AchievementCardP
         </div>
 
         {/* Bottom Gold Accent Line */}
-        <div className="h-1 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <div className="h-1 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       </div>
     </motion.div>
   );

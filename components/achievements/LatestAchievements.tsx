@@ -13,8 +13,8 @@ export default function LatestAchievements() {
     <section className="relative py-20 sm:py-24 lg:py-32 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
+        <div className="absolute top-1/4 right-0 w-96 h-96 bg-[#D4AF37]/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-[#D4AF37]/5 rounded-full blur-3xl" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -25,10 +25,10 @@ export default function LatestAchievements() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full mb-4"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-[#D4AF37]/10 backdrop-blur-sm border border-[#D4AF37]/20 rounded-full mb-4"
           >
-            <Award className="w-4 h-4 text-white" />
-            <span className="text-sm font-medium text-white">Achievement</span>
+            <Award className="w-4 h-4 text-[#D4AF37]" />
+            <span className="text-sm font-medium text-[#D4AF37]">Achievement</span>
           </motion.div>
 
           <motion.h2
@@ -39,7 +39,7 @@ export default function LatestAchievements() {
             className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4"
           >
             Our{' '}
-            <span className="bg-gradient-to-r from-white to-zinc-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#D4AF37] to-[#FFD700] bg-clip-text text-transparent">
               Achievements
             </span>
           </motion.h2>
@@ -76,7 +76,7 @@ export default function LatestAchievements() {
         >
           <Link
             href="/achievements"
-            className="group inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-white to-zinc-300 text-black font-semibold rounded-xl hover:shadow-[0_0_30px_rgba(255,255,255,0.35)] transition-all duration-300 hover:scale-105"
+            className="group inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#D4AF37] to-[#FFD700] text-[#111111] font-semibold rounded-xl hover:shadow-[0_0_30px_rgba(212,175,55,0.4)] transition-all duration-300 hover:scale-105"
           >
             <span>Explore Achievements</span>
             <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
