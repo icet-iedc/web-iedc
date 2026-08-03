@@ -6,7 +6,7 @@ export default function AboutSection() {
   return (
     <section id="about" className="py-32 relative overflow-hidden">
       {/* Background glow */}
-      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#D4AF37] opacity-10 blur-[150px] rounded-full" />
+      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white opacity-10 blur-[150px] rounded-full" />
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -49,7 +49,7 @@ export default function AboutSection() {
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1, delay: 0.5 }}
-                className="h-[2px] bg-gradient-to-r from-[#D4AF37] via-[#FFD700] to-transparent origin-left"
+                className="h-[2px] bg-gradient-to-r from-white via-zinc-400 to-transparent origin-left"
               />
             </div>
           </motion.div>

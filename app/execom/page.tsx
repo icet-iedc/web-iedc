@@ -13,7 +13,7 @@ export default async function ExecomPage() {
 
   return (
     <main className="relative min-h-screen bg-[#111111] px-4 py-24 sm:px-6 md:px-10 md:py-32 overflow-x-hidden">
-      <div className="pointer-events-none absolute left-1/2 top-0 h-[300px] w-[600px] sm:h-[400px] sm:w-[700px] md:h-[500px] md:w-[900px] -translate-x-1/2 rounded-full bg-[#D4AF37] opacity-[0.07] blur-[120px] md:blur-[160px]" />
+      <div className="pointer-events-none absolute left-1/2 top-0 h-[300px] w-[600px] sm:h-[400px] sm:w-[700px] md:h-[500px] md:w-[900px] -translate-x-1/2 rounded-full bg-white opacity-[0.07] blur-[120px] md:blur-[160px]" />
 
       <div className="relative mx-auto max-w-7xl mt-5">
         <div className="mx-auto max-w-2xl text-center">

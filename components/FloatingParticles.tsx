@@ -35,7 +35,7 @@ export default function FloatingParticles() {
       {particles.map((particle) => (
         <motion.div
           key={particle.id}
-          className="absolute rounded-full bg-[#D4AF37]"
+          className="absolute rounded-full bg-white"
           style={{
             width: particle.size,
             height: particle.size,

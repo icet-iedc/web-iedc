@@ -25,7 +25,7 @@ export default function StartupsSection() {
   return (
     <section id="startups" className="py-32 relative overflow-hidden">
       {/* Background glow */}
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#D4AF37] opacity-10 blur-[150px] rounded-full" />
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white opacity-10 blur-[150px] rounded-full" />
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <motion.div
@@ -55,10 +55,10 @@ export default function StartupsSection() {
             >
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-3">
-                  <h3 className="text-2xl font-bold group-hover:text-[#D4AF37] transition-colors duration-300">
+                  <h3 className="text-2xl font-bold group-hover:text-white transition-colors duration-300">
                     {startup.name}
                   </h3>
-                  <span className="px-3 py-1 rounded-full bg-[#D4AF37]/10 text-[#D4AF37] text-xs font-semibold">
+                  <span className="px-3 py-1 rounded-full bg-white/10 text-white text-xs font-semibold">
                     {startup.category}
                   </span>
                 </div>

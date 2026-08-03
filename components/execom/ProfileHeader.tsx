@@ -37,7 +37,7 @@ export default function ProfileHeader({ member }: { member: ExecomMember }) {
         <h1 className="text-3xl font-bold tracking-tight text-white md:text-5xl text-transform: uppercase">
           {member.fullName}
         </h1>
-        <h2 className="mt-4 text-2xl font-semibold tracking-tight text-[#D4AF37] md:text-3xl text-transform: uppercase">
+        <h2 className="mt-4 text-2xl font-semibold tracking-tight text-white md:text-3xl text-transform: uppercase">
           {member.role}
         </h2>
         <p className="mt-3 text-white/60 text-transform: uppercase">
