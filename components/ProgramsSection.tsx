@@ -63,10 +63,10 @@ export default function ProgramsSection() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
               whileHover={{ scale: 1.02, y: -5 }}
-              className="glass rounded-3xl p-8 group hover:bg-white/10 transition-all duration-300 hover:shadow-[0_0_40px_rgba(255,255,255,0.15)]"
+              className="glass rounded-3xl p-8 group hover:bg-white/10 transition-all duration-300 hover:shadow-[0_0_40px_rgba(212,175,55,0.15)]"
             >
-              <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center mb-6 group-hover:bg-white/20 transition-colors duration-300">
-                <program.icon className="w-7 h-7 text-white" />
+              <div className="w-14 h-14 rounded-2xl bg-[#D4AF37]/10 flex items-center justify-center mb-6 group-hover:bg-[#D4AF37]/20 transition-colors duration-300">
+                <program.icon className="w-7 h-7 text-[#D4AF37]" />
               </div>
               <h3 className="text-2xl font-bold mb-3 group-hover:text-white transition-colors duration-300">
                 {program.title}
