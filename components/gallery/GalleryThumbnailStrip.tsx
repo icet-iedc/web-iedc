@@ -38,10 +38,10 @@ export default function GalleryThumbnailStrip({
                 relative flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-lg overflow-hidden border-2 transition-all duration-300
                 ${
                   isSelected
-                    ? 'border-gray-800 scale-105 ring-2 ring-gray-800 ring-offset-2'
-                    : 'border-gray-300 hover:border-gray-500 hover:scale-105'
+                    ? 'border-[#D4AF37] scale-105 ring-2 ring-[#D4AF37] ring-offset-2 ring-offset-[#111111]'
+                    : 'border-white/20 hover:border-white/50 hover:scale-105'
                 }
-                focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-400 focus-visible:ring-offset-2
+                focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] focus-visible:ring-offset-2 focus-visible:ring-offset-[#111111]
               `}
             >
               <img
@@ -53,12 +53,12 @@ export default function GalleryThumbnailStrip({
 
               {/* Selected Overlay */}
               {isSelected && (
-                <div className="absolute inset-0 bg-gray-900/10 pointer-events-none" />
+                <div className="absolute inset-0 bg-[#D4AF37]/10 pointer-events-none" />
               )}
 
               {/* Hover Overlay */}
               {!isSelected && (
-                <div className="absolute inset-0 bg-black/0 hover:bg-black/10 transition-colors duration-300" />
+                <div className="absolute inset-0 bg-black/40 hover:bg-black/0 transition-colors duration-300" />
               )}
             </motion.button>
           );
