@@ -19,7 +19,7 @@ const navItems: NavItem[] = [
   { label: "About", to: "about" },
   { label: "Events", to: "agenda" },
   { label: "Gallery", to: "gallery" },
-  { label: "Execom", to: "participants" },
+  { label: "Team", to: "team" },
   { label: "Achievements", to: "sponsors" },
   { label: "Contact", to: "contact" },
 ];
