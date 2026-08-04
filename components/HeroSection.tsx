@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import LightRays from './ui/LightRays';
 
 export default function HeroSection() {
   const reduceMotion = useReducedMotion();
@@ -17,9 +18,27 @@ export default function HeroSection() {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-black">
+      {/* Light Rays Effect */}
+      <div className="absolute inset-0 z-0">
+        <LightRays
+          raysOrigin="top-center"
+          raysColor="#D4AF37"
+          raysSpeed={0.8}
+          lightSpread={1.2}
+          rayLength={1.5}
+          followMouse={true}
+          mouseInfluence={0.05}
+          noiseAmount={0.02}
+          distortion={0.02}
+          fadeDistance={1.2}
+          saturation={0.8}
+          className="opacity-25"
+        />
+      </div>
+
       {/* Blueprint grid */}
       <div
-        className="absolute inset-0 opacity-[0.35] pointer-events-none"
+        className="absolute inset-0 opacity-[0.35] pointer-events-none z-1"
         style={{
           backgroundImage:
             'linear-gradient(to right, rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.08) 1px, transparent 1px)',
@@ -28,15 +47,15 @@ export default function HeroSection() {
       />
 
       {/* Single restrained light source, tied to brand color */}
-      <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full bg-white opacity-[0.12] blur-[160px] pointer-events-none" />
+      <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full bg-white opacity-[0.12] blur-[160px] pointer-events-none z-1" />
 
       {/* Registration marks */}
-      <RegistrationMark className="top-8 left-8" />
-      <RegistrationMark className="top-8 right-8" />
-      <RegistrationMark className="bottom-8 left-8" />
-      <RegistrationMark className="bottom-8 right-8" />
+      <RegistrationMark className="top-8 left-8 z-10" />
+      <RegistrationMark className="top-8 right-8 z-10" />
+      <RegistrationMark className="bottom-8 left-8 z-10" />
+      <RegistrationMark className="bottom-8 right-8 z-10" />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-10 w-full py-32">
+      <div className="relative z-20 max-w-6xl mx-auto px-6 md:px-10 w-full py-32">
         <div className="grid lg:grid-cols-[1fr_auto] gap-16 items-end">
           <div>
             {/* Eyebrow */}
