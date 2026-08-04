@@ -61,56 +61,60 @@ export default function Navbar() {
       <header className="fixed top-6 left-0 right-0 z-50 flex justify-center" ref={menuRef}>
       <div
         className="w-[92%] mx-auto max-w-[1280px] px-6 flex items-center justify-between
-          lg:w-full lg:mx-0
-          lg:bg-transparent lg:border-none lg:backdrop-blur-0 lg:shadow-none
-          bg-white/5 backdrop-blur-xl border border-white/10 rounded-full py-3 shadow-[0_8px_32px_rgba(0,0,0,0.25)]"
+          lg:w-full lg:mx-0 lg:px-6
+          bg-white/5 backdrop-blur-xl border border-white/10 rounded-full py-3 shadow-[0_8px_32px_rgba(0,0,0,0.25)]
+          lg:bg-transparent lg:border-none lg:backdrop-blur-none lg:shadow-none lg:py-0"
       >
         {/* Logo */}
-        <NextLink
-          href="/"
-          className="cursor-pointer flex items-center"
-          aria-label="Go to homepage"
-        >
-          <Image
-            src="/images/logo.png"
-            alt="IEDC ICET Logo"
-            width={60}
-            height={60}
-            priority
-            style={{ width: 'auto', height: 'auto' }}
-          />
-        </NextLink>
+        <div className="flex-shrink-0">
+          <NextLink
+            href="/"
+            className="cursor-pointer flex items-center"
+            aria-label="Go to homepage"
+          >
+            <Image
+              src="/images/logo.png"
+              alt="IEDC ICET Logo"
+              width={60}
+              height={60}
+              priority
+              style={{ width: 'auto', height: 'auto' }}
+            />
+          </NextLink>
+        </div>
 
-        {/* Desktop Navigation */}
-        <nav className="glass-nav hidden lg:flex items-center gap-10 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full px-12 py-4 shadow-lg">
-          {navItems.map((item) => 
-            item.isExternal ? (
-              <NextLink
-                key={item.to}
-                href={item.to}
-                className="nav-link text-[14px] font-medium tracking-[0.02em] text-white/60 hover:text-white transition-colors cursor-pointer"
-              >
-                {item.label}
-              </NextLink>
-            ) : (
-              <ScrollLink
-                key={item.to}
-                to={item.to}
-                smooth
-                duration={450}
-                offset={-100}
-                spy
-                activeClass="active"
-                className="nav-link text-[14px] font-medium tracking-[0.02em] text-white/60 hover:text-white transition-colors cursor-pointer"
-              >
-                {item.label}
-              </ScrollLink>
-            )
-          )}
-        </nav>
+        {/* Desktop Navigation - Centered */}
+        <div className="hidden lg:flex flex-1 justify-center">
+          <nav className="glass-nav flex items-center gap-10 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full px-12 py-4 shadow-lg">
+            {navItems.map((item) => 
+              item.isExternal ? (
+                <NextLink
+                  key={item.to}
+                  href={item.to}
+                  className="nav-link text-[14px] font-medium tracking-[0.02em] text-white/60 hover:text-white transition-colors cursor-pointer"
+                >
+                  {item.label}
+                </NextLink>
+              ) : (
+                <ScrollLink
+                  key={item.to}
+                  to={item.to}
+                  smooth
+                  duration={450}
+                  offset={-100}
+                  spy
+                  activeClass="active"
+                  className="nav-link text-[14px] font-medium tracking-[0.02em] text-white/60 hover:text-white transition-colors cursor-pointer"
+                >
+                  {item.label}
+                </ScrollLink>
+              )
+            )}
+          </nav>
+        </div>
 
         {/* Right Side */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 flex-shrink-0">
           <button
             className="hidden lg:inline-flex items-center justify-center rounded-full px-6 py-2.5 text-[14px] font-medium text-white shadow-lg transition hover:scale-105 bg-[var(--primary)] hover:bg-[var(--primary)]"
           >
