@@ -24,9 +24,9 @@ export default function ExecomSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+            <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-6">
               Meet Our{' '}
-              <span className="text-[var(--primary)]">
+              <span className="gold-gradient">
                 Team
               </span>
             </h2>

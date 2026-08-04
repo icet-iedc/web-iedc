@@ -26,10 +26,10 @@ export default function LatestAchievements() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4"
+            className="text-5xl md:text-6xl font-bold tracking-tight mb-6"
           >
             Our{' '}
-            <span className="bg-gradient-to-r from-[#D4AF37] to-[#FFD700] bg-clip-text text-transparent">
+            <span className="gold-gradient">
               Achievements
             </span>
           </motion.h2>
