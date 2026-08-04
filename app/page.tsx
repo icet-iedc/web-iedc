@@ -20,9 +20,9 @@ export default function Home() {
       <RecentEvent />
       <ProgramsSection />
       <StartupsSection />
+      <LatestGallery />
       <ExecomSection />
       <LatestAchievements />
-      <LatestGallery />
       <Footer />
     </div>
   );
