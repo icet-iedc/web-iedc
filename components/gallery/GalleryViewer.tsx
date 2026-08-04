@@ -60,18 +60,18 @@ export default function GalleryViewer({ collection }: GalleryViewerProps) {
   return (
     <div className="flex flex-col items-center w-full bg-transparent">
       {/* Main Image Container with Navigation */}
-      <div className="relative flex items-center justify-center gap-4 px-6 py-8">
+      <div className="relative flex items-center justify-center w-full gap-2 sm:gap-4 px-0 sm:px-6 py-4 sm:py-8">
         {/* Previous Button */}
         <button
           onClick={handlePrevious}
           aria-label="Previous image"
-          className="group flex items-center justify-center w-12 h-12 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] flex-shrink-0"
+          className="absolute left-2 sm:relative sm:left-auto z-10 group flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/50 sm:bg-white/5 hover:bg-white/10 border border-white/10 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] flex-shrink-0"
         >
-          <ChevronLeft className="w-6 h-6 text-white group-hover:text-[#D4AF37] transition-colors duration-300 group-hover:-translate-x-0.5" />
+          <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 text-white group-hover:text-[#D4AF37] transition-colors duration-300 sm:group-hover:-translate-x-0.5" />
         </button>
 
         {/* Main Image - Fixed container size */}
-        <div className="relative w-[320px] h-[400px] sm:w-[380px] sm:h-[480px] md:w-[420px] md:h-[520px] flex items-center justify-center bg-black/40 border border-white/5 rounded-2xl overflow-hidden">
+        <div className="relative w-[85vw] h-[55vh] sm:w-[380px] sm:h-[480px] md:w-[420px] md:h-[520px] flex items-center justify-center bg-black/40 border border-white/5 rounded-2xl overflow-hidden mx-auto">
           <AnimatePresence mode="wait" custom={imageDirection}>
             <motion.div
               key={currentImage.id}
@@ -95,9 +95,9 @@ export default function GalleryViewer({ collection }: GalleryViewerProps) {
         <button
           onClick={handleNext}
           aria-label="Next image"
-          className="group flex items-center justify-center w-12 h-12 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] flex-shrink-0"
+          className="absolute right-2 sm:relative sm:right-auto z-10 group flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/50 sm:bg-white/5 hover:bg-white/10 border border-white/10 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] flex-shrink-0"
         >
-          <ChevronRight className="w-6 h-6 text-white group-hover:text-[#D4AF37] transition-colors duration-300 group-hover:translate-x-0.5" />
+          <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-white group-hover:text-[#D4AF37] transition-colors duration-300 sm:group-hover:translate-x-0.5" />
         </button>
       </div>
 
