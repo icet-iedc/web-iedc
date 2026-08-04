@@ -17,10 +17,10 @@ interface NavItem {
 const navItems: NavItem[] = [
   { label: "Home", to: "home" },
   { label: "About", to: "about" },
-  { label: "Events", to: "events" },
+  { label: "Events", to: "agenda" },
   { label: "Gallery", to: "gallery" },
-  { label: "Execom", to: "execom" },
-  { label: "Achievements", to: "achievements" },
+  { label: "Execom", to: "participants" },
+  { label: "Achievements", to: "sponsors" },
   { label: "Contact", to: "contact" },
 ];
 
@@ -114,7 +114,7 @@ export default function Navbar() {
           <button
             className="hidden lg:inline-flex items-center justify-center rounded-full px-6 py-2.5 text-[14px] font-medium text-white shadow-lg transition hover:scale-105 bg-[var(--primary)] hover:bg-[var(--primary)]"
           >
-            Register Now
+            Join Community
           </button>
 
           {/* Mobile Toggle */}
