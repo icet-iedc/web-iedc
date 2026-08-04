@@ -26,10 +26,24 @@ export default async function ExecomPage() {
           </p>
         </div>
 
-        <div className="mt-12 grid grid-cols-2 gap-6 sm:mt-16 sm:gap-8 lg:grid-cols-4">
-          {members.map((member, index) => (
-            <ExecomCard key={member.id} member={member} index={index} />
-          ))}
+        <div className="mt-12 flex flex-col gap-6 sm:mt-16 sm:gap-8 lg:gap-12">
+          {/* First Row: 2 Members Centered */}
+          <div className="flex justify-center gap-6 sm:gap-8 lg:gap-12">
+            {members.slice(0, 2).map((member, index) => (
+              <div key={member.id} className="w-1/2 sm:w-1/3 lg:w-1/4 max-w-[280px]">
+                <ExecomCard member={member} index={index} />
+              </div>
+            ))}
+          </div>
+
+          {/* Subsequent Rows: 4 Members Grid */}
+          {members.length > 2 && (
+            <div className="grid grid-cols-2 gap-6 sm:gap-8 lg:grid-cols-4 lg:gap-12">
+              {members.slice(2).map((member, index) => (
+                <ExecomCard key={member.id} member={member} index={index + 2} />
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </main>
