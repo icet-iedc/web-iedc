@@ -18,7 +18,7 @@ export default function Home() {
       <AboutSection />
       {/* <StatsSection /> */}
       <RecentEvent />
-      <ProgramsSection />
+      {/* <ProgramsSection /> */}
       <StartupsSection />
       <LatestGallery />
       <ExecomSection />
