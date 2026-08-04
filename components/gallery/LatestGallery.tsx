@@ -47,39 +47,27 @@ export default function LatestGallery() {
       <section id="gallery" className="relative py-24 md:py-32 overflow-hidden bg-black">
         {/* Background Grid */}
         <div
-          className="absolute inset-0 opacity-[0.25] pointer-events-none"
+          className="absolute inset-0 opacity-[0.35] pointer-events-none"
           style={{
             backgroundImage:
-              'linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px)',
+              'linear-gradient(to right, rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.08) 1px, transparent 1px)',
             backgroundSize: '64px 64px',
           }}
         />
 
-        {/* Subtle Glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full bg-[#D4AF37] opacity-[0.08] blur-[150px] pointer-events-none" />
+        {/* Single restrained light source */}
+        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full bg-white opacity-[0.12] blur-[160px] pointer-events-none" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10">
           {/* Section Header */}
           <div className="text-center mb-16">
-            {/* Badge */}
-            <motion.div
-              {...fade(0)}
-              className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm"
-            >
-              <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse" />
-              <span className="font-mono text-xs tracking-wider text-white/55 uppercase">
-                Gallery
-              </span>
-            </motion.div>
 
             {/* Heading */}
             <motion.h2
               {...fade(0.1, 26)}
               className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-white mb-4"
             >
-              Capturing Innovation,
-              <br />
-              <span className="text-[#D4AF37]">One Moment at a Time</span>
+              <span className="text-[#D4AF37]">Gallery</span>
             </motion.h2>
 
             {/* Subtitle */}
