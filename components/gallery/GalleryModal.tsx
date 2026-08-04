@@ -74,14 +74,14 @@ export default function GalleryModal({ isOpen, collection, onClose }: GalleryMod
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              className="relative w-auto max-w-[92vw] bg-white rounded-xl shadow-[0_25px_100px_rgba(0,0,0,0.5)] overflow-hidden"
+              className="relative w-auto max-w-[92vw] glass rounded-xl shadow-[0_25px_100px_rgba(0,0,0,0.5)] overflow-hidden"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button */}
               <button
                 onClick={onClose}
                 aria-label="Close gallery"
-                className="absolute top-4 right-4 z-50 flex items-center justify-center w-10 h-10 rounded-full bg-white/90 hover:bg-white text-gray-800 transition-all duration-300 hover:rotate-90 hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-400 shadow-lg"
+                className="absolute top-4 right-4 z-50 flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/10 transition-all duration-300 hover:rotate-90 hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] shadow-lg"
               >
                 <X className="w-5 h-5" />
               </button>
