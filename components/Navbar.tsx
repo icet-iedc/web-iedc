@@ -46,7 +46,19 @@ export default function Navbar() {
   }, [mobileMenuOpen]);
 
   return (
-    <header className="fixed top-6 left-0 right-0 z-50 flex justify-center" ref={menuRef}>
+    <>
+      {/* Mobile Menu Backdrop to catch outside clicks and prevent triggering other elements */}
+      {mobileMenuOpen && (
+        <div
+          className="fixed inset-0 z-40 lg:hidden"
+          onMouseDown={(e) => {
+            e.stopPropagation();
+            setMobileMenuOpen(false);
+          }}
+          aria-hidden="true"
+        />
+      )}
+      <header className="fixed top-6 left-0 right-0 z-50 flex justify-center" ref={menuRef}>
       <div
         className="w-[92%] mx-auto max-w-[1280px] px-6 flex items-center justify-between
           lg:w-full lg:mx-0
@@ -158,5 +170,6 @@ export default function Navbar() {
         )}
       </AnimatePresence>
     </header>
+    </>
   );
 }
