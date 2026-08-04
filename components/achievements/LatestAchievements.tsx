@@ -10,7 +10,7 @@ export default function LatestAchievements() {
   const achievements = getLatestAchievements(3);
 
   return (
-    <section className="relative py-20 sm:py-24 lg:py-32 overflow-hidden">
+    <section id="achievements" className="relative py-20 sm:py-24 lg:py-32 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 right-0 w-96 h-96 bg-[#D4AF37]/5 rounded-full blur-3xl" />

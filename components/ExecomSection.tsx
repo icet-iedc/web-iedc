@@ -8,7 +8,7 @@ import { ArrowRight } from 'lucide-react';
 
 export default function ExecomSection() {
   return (
-    <section className="relative py-20 sm:py-24 lg:py-32 overflow-hidden">
+    <section id="execom" className="relative py-20 sm:py-24 lg:py-32 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 left-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />

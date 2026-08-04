@@ -44,7 +44,7 @@ export default function LatestGallery() {
 
   return (
     <>
-      <section className="relative py-24 md:py-32 overflow-hidden bg-black">
+      <section id="gallery" className="relative py-24 md:py-32 overflow-hidden bg-black">
         {/* Background Grid */}
         <div
           className="absolute inset-0 opacity-[0.25] pointer-events-none"
