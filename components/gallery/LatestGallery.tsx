@@ -64,10 +64,16 @@ export default function LatestGallery() {
 
             {/* Heading */}
             <motion.h2
-              {...fade(0.1, 26)}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-white mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="text-5xl md:text-6xl font-bold tracking-tight mb-6"
             >
-              <span className="text-[#D4AF37]">Gallery</span>
+              Our{' '}
+              <span className="gold-gradient">
+                Gallery
+              </span>
             </motion.h2>
 
             {/* Subtitle */}
