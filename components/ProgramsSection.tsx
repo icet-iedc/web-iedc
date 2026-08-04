@@ -38,14 +38,26 @@ export default function ProgramsSection() {
   ];
 
   return (
-    <section id="programs" className="py-32 relative">
+    <section id="programs" className="py-32 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
+          {/* Badge with Icon and Title */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 px-4 py-2 bg-[#D4AF37]/10 backdrop-blur-sm border border-[#D4AF37]/20 rounded-full mb-4"
+          >
+            <Rocket className="w-4 h-4 text-[#D4AF37]" />
+            <span className="text-sm font-medium text-[#D4AF37]">Programs</span>
+          </motion.div>
+
           <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-6">
             Our <span className="gold-gradient">Programs</span>
           </h2>
@@ -53,7 +65,9 @@ export default function ProgramsSection() {
             Comprehensive programs designed to nurture innovation at every stage
           </p>
         </motion.div>
+      </div>
 
+      <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {programs.map((program, index) => (
             <motion.div

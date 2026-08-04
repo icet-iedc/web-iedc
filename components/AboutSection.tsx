@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import TextPath from '@/components/ui/TextPath';
 
 export default function AboutSection() {
   return (
@@ -8,6 +9,20 @@ export default function AboutSection() {
       {/* Background glow */}
       <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white opacity-10 blur-[150px] rounded-full" />
       
+      {/* Straight Horizontal Marquee Slide at bottom of About Us */}
+      <div className="absolute bottom-0 left-0 right-0 w-full opacity-60 pointer-events-none z-0">
+        <TextPath
+          text="IEDC ICET   •   INNOVATION   •   ENTREPRENEURSHIP   •   INCUBATION   •   TECHNOLOGY   •   IMPACT"
+          textColor="#D4AF37"
+          speed={20}
+          waveFrequency={3}
+          waveHeight={0}
+          height={60}
+          width="100%"
+          textFont={{ fontSize: 18, fontWeight: 600, letterSpacing: 3 }}
+        />
+      </div>
+
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           {/* Left - Heading */}
