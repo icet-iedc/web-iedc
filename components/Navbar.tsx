@@ -17,10 +17,10 @@ interface NavItem {
 const navItems: NavItem[] = [
   { label: "Home", to: "home" },
   { label: "About", to: "about" },
-  { label: "Events", to: "agenda" },
+  { label: "Events", to: "events" },
   { label: "Gallery", to: "gallery" },
   { label: "Team", to: "team" },
-  { label: "Achievements", to: "sponsors" },
+  { label: "Achievements", to: "achievements" },
   { label: "Contact", to: "contact" },
 ];
 
