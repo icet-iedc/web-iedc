@@ -14,7 +14,7 @@ export default function AboutSection() {
         <TextPath
           text="IEDC ICET   •   INNOVATION   •   ENTREPRENEURSHIP   •   INCUBATION   •   TECHNOLOGY   •   IMPACT"
           textColor="#D4AF37"
-          speed={20}
+          speed={15}
           waveFrequency={3}
           waveHeight={0}
           height={60}

@@ -197,7 +197,7 @@ export default function TextPath(props: Props) {
     const textPathRef = useRef<SVGTextPathElement | null>(null)
 
     useLayoutEffect(() => {
-        speedRef.current = Math.max(0, speed ?? 0) * 5
+        speedRef.current = Math.max(0, speed ?? 0) * 4
         reversedRef.current = Boolean(reversed)
         unitWidthRef.current = unitWidthPx > 0 ? unitWidthPx : 0
     }, [speed, reversed, unitWidthPx])
@@ -366,7 +366,7 @@ const COMPONENT_DEFAULTS: Props = {
         fontStyle: undefined,
     },
     textColor: "#FFFFFF",
-    speed: 30,
+    speed: 20,
     reversed: true,
     waveFrequency: 3,
     waveHeight: 100,
