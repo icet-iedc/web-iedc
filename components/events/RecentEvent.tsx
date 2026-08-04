@@ -23,17 +23,6 @@ export default function RecentEvent() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-[#D4AF37]/10 backdrop-blur-sm border border-[#D4AF37]/20 rounded-full mb-4"
-          >
-            <span className="w-2 h-2 bg-[#D4AF37] rounded-full animate-pulse" />
-            <span className="text-sm font-medium text-[#D4AF37]">Recent Event</span>
-          </motion.div>
-
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -41,9 +30,9 @@ export default function RecentEvent() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4"
           >
-            Don't Miss Our{' '}
+            Upcoming{' '}
             <span className="bg-gradient-to-r from-[#D4AF37] to-[#FFD700] bg-clip-text text-transparent">
-              Latest Event
+              Event
             </span>
           </motion.h2>
 

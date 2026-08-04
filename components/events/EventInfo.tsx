@@ -15,31 +15,14 @@ export default function EventInfo({ event }: EventInfoProps) {
     { icon: Calendar, label: 'Date', value: new Date(event.date).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) },
     { icon: Clock, label: 'Time', value: event.time },
     { icon: MapPin, label: 'Venue', value: event.venue },
-    { icon: Users, label: 'Max Participants', value: event.maxParticipants.toString() },
+    //{ icon: Users, label: 'Max Participants', value: event.maxParticipants.toString() },
     { icon: DollarSign, label: 'Registration Fee', value: event.registrationFee },
   ];
 
   return (
     <div className="flex flex-col gap-6">
       {/* Tags */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.1 }}
-        className="flex flex-wrap gap-2"
-      >
-        {event.tags.map((tag, index) => (
-          <Badge
-            key={index}
-            variant="secondary"
-            className="bg-[#D4AF37]/10 text-[#D4AF37] border border-[#D4AF37]/20 hover:bg-[#D4AF37]/20 transition-colors duration-300"
-          >
-            <Tag className="w-3 h-3 mr-1" />
-            {tag}
-          </Badge>
-        ))}
-      </motion.div>
+      
 
       {/* Title */}
       <motion.div
@@ -66,6 +49,25 @@ export default function EventInfo({ event }: EventInfoProps) {
       >
         {event.description}
       </motion.p>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+        className="flex flex-wrap gap-2"
+      >
+        {event.tags.map((tag, index) => (
+          <Badge
+            key={index}
+            variant="secondary"
+            className="bg-[#D4AF37]/10 text-[#D4AF37] border border-[#D4AF37]/20 hover:bg-[#D4AF37]/20 transition-colors duration-300"
+          >
+            <Tag className="w-3 h-3 mr-1" />
+            {tag}
+          </Badge>
+        ))}
+      </motion.div>
 
       {/* Event Details */}
       <motion.div
@@ -116,7 +118,7 @@ export default function EventInfo({ event }: EventInfoProps) {
         </Badge>
       </motion.div>
 
-      {/* CTA Button */}
+      {/* 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -130,6 +132,7 @@ export default function EventInfo({ event }: EventInfoProps) {
           View Details
         </Link>
       </motion.div>
+      */}
     </div>
   );
 }
