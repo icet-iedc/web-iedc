@@ -1,125 +1,63 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { ArrowLeft, Award, Trophy, Star } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 export default function AchievementsPage() {
+  const router = useRouter();
+
   return (
-    <div className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20 mt-10">
-      {/* Background Elements */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#D4AF37] rounded-full blur-3xl opacity-30 animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#D4AF37] rounded-full blur-3xl opacity-30 animate-pulse" />
-      </div>
+    <div className="relative min-h-screen bg-black flex items-center justify-center">
+      {/* Background Grid */}
+      <div
+        className="absolute inset-0 opacity-[0.25] pointer-events-none"
+        style={{
+          backgroundImage:
+            'linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px)',
+          backgroundSize: '64px 64px',
+        }}
+      />
 
-      <div className="relative max-w-3xl mx-auto text-center">
-        {/* Icon */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-          className="flex justify-center mb-8"
-        >
-          <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-[#D4AF37] to-[#FFD700] rounded-full blur-2xl opacity-30 animate-pulse" />
-            <div className="relative w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-full">
-              <Trophy className="w-10 h-10 sm:w-12 sm:h-12 text-[#D4AF37]" />
-            </div>
-          </div>
-        </motion.div>
+      {/* Light source */}
+      <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full bg-white opacity-[0.12] blur-[160px] pointer-events-none" />
 
-        {/* Heading */}
+      <div className="relative z-10 max-w-2xl mx-auto px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
+          transition={{ duration: 0.6 }}
         >
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
-            Achievements{' '}
-            <span className="bg-gradient-to-r from-[#D4AF37] to-[#FFD700] bg-clip-text text-transparent">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
+            <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse" />
+            <span className="font-mono text-xs tracking-wider text-white/55 uppercase">
               Coming Soon
             </span>
+          </div>
+
+          {/* Heading */}
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-white mb-4">
+            Achievements
+            <br />
+            <span className="text-[#D4AF37]">Coming Soon</span>
           </h1>
-        </motion.div>
 
-        {/* Description */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-lg sm:text-xl text-gray-400 mb-8 leading-relaxed max-w-2xl mx-auto"
-        >
-          We're currently preparing a complete showcase of our achievements, recognitions, startup success stories, awards, and milestones. Please check back soon.
-        </motion.p>
+          {/* Description */}
+          <p className="text-base md:text-lg text-white/55 leading-relaxed mb-8">
+            We&apos;re preparing a complete showcase of our recognitions, startup success
+            stories, awards, and milestones. Stay tuned!
+          </p>
 
-        {/* Features */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12"
-        >
-          {[
-            { icon: Award, text: 'Awards' },
-            { icon: Trophy, text: 'Recognitions' },
-            { icon: Star, text: 'Milestones' },
-          ].map((item, index) => (
-            <div
-              key={index}
-              className="flex items-center justify-center gap-2 p-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl"
-            >
-              <item.icon className="w-5 h-5 text-[#D4AF37]" />
-              <span className="text-sm sm:text-base text-white font-medium">{item.text}</span>
-            </div>
-          ))}
-        </motion.div>
-
-        {/* Stats Preview */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="grid grid-cols-3 gap-4 mb-12 p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl"
-        >
-          <div className="text-center">
-            <div className="text-2xl sm:text-3xl font-bold text-white mb-1">15+</div>
-            <div className="text-xs sm:text-sm text-gray-400">Awards</div>
-          </div>
-          <div className="text-center border-l border-r border-white/10">
-            <div className="text-2xl sm:text-3xl font-bold text-white mb-1">10+</div>
-            <div className="text-xs sm:text-sm text-gray-400">Startups</div>
-          </div>
-          <div className="text-center">
-            <div className="text-2xl sm:text-3xl font-bold text-white mb-1">50+</div>
-            <div className="text-xs sm:text-sm text-gray-400">Recognitions</div>
-          </div>
-        </motion.div>
-
-        {/* Back Button */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-        >
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#D4AF37] to-[#FFD700] text-[#111111] font-semibold rounded-xl hover:shadow-[0_0_30px_rgba(212,175,55,0.4)] transition-all duration-300 hover:scale-105"
+          {/* Back Button */}
+          <button
+            onClick={() => router.push('/')}
+            className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm text-white font-medium transition-all duration-300 hover:bg-[#D4AF37]/10 hover:border-[#D4AF37]/40 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#D4AF37]/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37]"
           >
-            <ArrowLeft className="w-5 h-5" />
-            Back to Home
-          </Link>
+            <ArrowLeft className="w-5 h-5 transition-transform duration-300 group-hover:-translate-x-1" />
+            <span>Back to Home</span>
+          </button>
         </motion.div>
-
-        {/* Footer Note */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          className="mt-8 text-sm text-gray-500"
-        >
-          Stay tuned for our complete achievement showcase
-        </motion.p>
       </div>
     </div>
   );
