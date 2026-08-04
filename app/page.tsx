@@ -16,7 +16,7 @@ export default function Home() {
       <HeroSection />
       <TrustSection />
       <AboutSection />
-      <StatsSection />
+      {/* <StatsSection /> */}
       <RecentEvent />
       <ProgramsSection />
       <StartupsSection />
