@@ -37,10 +37,24 @@ export default function ExecomSection() {
         </div>
 
         {/* Execom Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 mb-12">
-          {execomMembers.map((member, index) => (
-            <ExecomCard key={member.id} member={member} index={index} />
-          ))}
+        <div className="flex flex-col gap-8 sm:gap-10 lg:gap-12 mb-12">
+          {/* First Row: 2 Members Centered */}
+          <div className="flex justify-center gap-8 sm:gap-10 lg:gap-12">
+            {execomMembers.slice(0, 2).map((member, index) => (
+              <div key={member.id} className="w-1/2 sm:w-1/3 lg:w-1/4 max-w-[280px]">
+                <ExecomCard member={member} index={index} />
+              </div>
+            ))}
+          </div>
+          
+          {/* Subsequent Rows: 4 Members Grid */}
+          {execomMembers.length > 2 && (
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12">
+              {execomMembers.slice(2).map((member, index) => (
+                <ExecomCard key={member.id} member={member} index={index + 2} />
+              ))}
+            </div>
+          )}
         </div>
 
         {/* View All Button */}
