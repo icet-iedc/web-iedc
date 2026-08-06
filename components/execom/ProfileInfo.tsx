@@ -43,7 +43,6 @@ export default function ProfileInfo({ member }: { member: ExecomMember }) {
         <CardContent className="p-6">
           <p className="text-xs uppercase tracking-wide text-white/40">Bio</p>
           <Separator className="my-3 bg-white/10" />
-          <p className="text-sm leading-relaxed text-white/70">{member.bio}</p>
         </CardContent>
       </Card>
     </div>
