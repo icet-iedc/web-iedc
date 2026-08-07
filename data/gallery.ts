@@ -15,224 +15,154 @@ export interface GalleryCollection {
   images: GalleryImage[];
 }
 
-// Hardcoded gallery data - easily replaceable with API calls later
 export const galleryCollections: GalleryCollection[] = [
   {
     id: '1',
-    slug: 'startup-bootcamp-2024',
-    title: 'Startup Bootcamp 2024',
-    description: 'Three-day intensive bootcamp focused on startup fundamentals and pitch preparation',
-    coverImage: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&h=600&fit=crop',
-    eventDate: '2024-01-15',
-    imageCount: 12,
+    slug: '1-day-drone-workshop',
+    title: '1-Day Drone Workshop',
+    description: 'The 1-Day Drone Workshop is organized by IEDC ICET in association with the Innovation and Entrepreneurship Development Centre (IEDC) at Ilahia College of Engineering and Technology. Conducted by Quadkart FPV School, this hands-on workshop introduces participants to the fundamentals of drone technology, FPV systems, flight operations, and practical applications. The session will be led by Nihal Sherin and is offered free of cost to all registered participants.',
+    coverImage: 'images/gallery/Drone 1.1.jpeg',
+    eventDate: '11 October 2025',
+    imageCount: 5,
     images: [
       {
         id: '1-1',
-        url: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=1200&h=800&fit=crop',
-        alt: 'Startup Bootcamp opening session'
+        url: 'images/gallery/Drone 1.1.jpeg',
+        alt: '1-Day Drone Workshop - Poster'
       },
       {
         id: '1-2',
-        url: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=800&fit=crop',
-        alt: 'Team collaboration workshop'
+        url: 'images/gallery/Drone 1.2.jpeg',
+        alt: '1-Day Drone Workshop - Team Photo'
       },
       {
         id: '1-3',
-        url: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&h=800&fit=crop',
-        alt: 'Pitch preparation session'
+        url: 'images/gallery/Drone 1.3.jpeg',
+        alt: '1-Day Drone Workshop - Drone Assembly'
       },
       {
         id: '1-4',
-        url: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1200&h=800&fit=crop',
-        alt: 'Group brainstorming activity'
+        url: 'images/gallery/Drone 1.4.jpeg',
+        alt: '1-Day Drone Workshop - Technology Learning'
       },
       {
         id: '1-5',
-        url: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1200&h=800&fit=crop',
-        alt: 'Mentor feedback session'
+        url: 'images/gallery/Drone 1.5.jpeg',
+        alt: '1-Day Drone Workshop - Hands-on Drone Testing'
       },
-      {
-        id: '1-6',
-        url: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1200&h=800&fit=crop',
-        alt: 'Final presentations day'
-      },
-      {
-        id: '1-7',
-        url: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&h=800&fit=crop',
-        alt: 'Networking break'
-      },
-      {
-        id: '1-8',
-        url: 'https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=1200&h=800&fit=crop',
-        alt: 'Workshop in progress'
-      },
-      {
-        id: '1-9',
-        url: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1200&h=800&fit=crop',
-        alt: 'Team project work'
-      },
-      {
-        id: '1-10',
-        url: 'https://images.unsplash.com/photo-1552581234-26160f608093?w=1200&h=800&fit=crop',
-        alt: 'Group discussion'
-      },
-      {
-        id: '1-11',
-        url: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1200&h=800&fit=crop',
-        alt: 'Award ceremony'
-      },
-      {
-        id: '1-12',
-        url: 'https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=1200&h=800&fit=crop',
-        alt: 'Closing celebration'
-      }
     ]
   },
   {
     id: '2',
-    slug: 'hackathon-2024',
-    title: 'IEDC Hackathon 2024',
-    description: '48-hour hackathon bringing together innovators to solve real-world problems',
-    coverImage: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=600&fit=crop',
-    eventDate: '2024-02-20',
-    imageCount: 15,
+    slug: 'manogath-2k25-ideathon',
+    title: 'MANOGATH 2K25 - Ideathon',
+    description: 'MANOGATH 2K25 is an Ideathon organized by IEDC ICET in association with the Innovation and Entrepreneurship Development Centre (IEDC), Institution\'s Innovation Council (IIC), and YIP. The event invites students to present unique and innovative ideas, compete for exciting prizes, and receive valuable feedback from experts. Participants will receive certificates, activity points as per KTU norms, and an opportunity to showcase their creativity and entrepreneurial thinking.',
+    coverImage: 'images/gallery/Manogath 2.1.jpeg',
+    eventDate: '08 August 2025',
+    imageCount: 4,
     images: [
       {
         id: '2-1',
-        url: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&h=800&fit=crop',
-        alt: 'Hackathon kickoff event'
+        url: 'images/gallery/Manogath 2.1.jpeg',
+        alt: 'MANOGATH 2K25 - Ideathon - Poster'
       },
       {
         id: '2-2',
-        url: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&h=800&fit=crop',
-        alt: 'Developers coding'
+        url: 'images/gallery/Manogath 2.2.jpeg',
+        alt: 'MANOGATH 2K25 - Ideathon - Winners'
       },
       {
         id: '2-3',
-        url: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=800&fit=crop',
-        alt: 'Team collaboration'
+        url: 'images/gallery/Manogath 2.3.jpeg',
+        alt: 'MANOGATH 2K25 - Ideathon - 1st Prize Winner'
       },
       {
         id: '2-4',
-        url: 'https://images.unsplash.com/photo-1531497865144-0464ef8fb9a9?w=1200&h=800&fit=crop',
-        alt: 'Late night coding session'
+        url: 'images/gallery/Manogath 2.4.jpeg',
+        alt: 'MANOGATH 2K25 - Ideathon - 2nd Prize Winner'
       },
-      {
-        id: '2-5',
-        url: 'https://images.unsplash.com/photo-1573167710701-35950a41e251?w=1200&h=800&fit=crop',
-        alt: 'Focused developer'
-      },
-      {
-        id: '2-6',
-        url: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&h=800&fit=crop',
-        alt: 'Team huddle'
-      },
-      {
-        id: '2-7',
-        url: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=800&fit=crop',
-        alt: 'Project presentation'
-      },
-      {
-        id: '2-8',
-        url: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&h=800&fit=crop',
-        alt: 'Mentor consultation'
-      },
-      {
-        id: '2-9',
-        url: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&h=800&fit=crop',
-        alt: 'Team working together'
-      },
-      {
-        id: '2-10',
-        url: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&h=800&fit=crop',
-        alt: 'Brainstorming session'
-      },
-      {
-        id: '2-11',
-        url: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&h=800&fit=crop',
-        alt: 'Demo preparation'
-      },
-      {
-        id: '2-12',
-        url: 'https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?w=1200&h=800&fit=crop',
-        alt: 'Final demo day'
-      },
-      {
-        id: '2-13',
-        url: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=800&fit=crop',
-        alt: 'Judging panel'
-      },
-      {
-        id: '2-14',
-        url: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1200&h=800&fit=crop',
-        alt: 'Winners announcement'
-      },
-      {
-        id: '2-15',
-        url: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200&h=800&fit=crop',
-        alt: 'Team celebration'
-      }
     ]
   },
   {
     id: '3',
-    slug: 'founder-meetup-jan-2024',
-    title: 'Founder Meetup Jan 2024',
-    description: 'Monthly meetup connecting student entrepreneurs with successful founders',
-    coverImage: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&h=600&fit=crop',
-    eventDate: '2024-01-28',
-    imageCount: 10,
+    slug: 'innospace-2k26-idea-pitching-competition',
+    title: 'INNOSPACE 2K26 - Idea Pitching Competition',
+    description: 'INNOSPACE 2K26 is an innovation and idea pitching competition organized by IEDC ICET in association with Kerala Startup Mission IEDC, Institution\'s Innovation Council (IIC), and YIP for first-year students. The event provides a platform to present unique and smart ideas, encouraging participants to explore innovation, brainstorming, validation, prototyping, and scalability. A prize pool of ₹3,000, certificates for all participants, and mementos for the winners make it an exciting opportunity to kick-start the entrepreneurial journey.',
+    coverImage: 'images/gallery/Innospace 3.1.jpeg',
+    eventDate: '24 March 2026',
+    imageCount: 5,
     images: [
       {
         id: '3-1',
-        url: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&h=800&fit=crop',
-        alt: 'Founder meetup networking'
+        url: 'images/gallery/Innospace 3.1.jpeg',
+        alt: 'INNOSPACE 2K26 - Idea Pitching Competition - Poster'
       },
       {
         id: '3-2',
-        url: 'https://images.unsplash.com/photo-1511578314322-379afb476865?w=1200&h=800&fit=crop',
-        alt: 'Panel discussion'
+        url: 'images/gallery/Innospace 3.2.jpeg',
+        alt: 'INNOSPACE 2K26 - Idea Pitching Competition - Presentation'
       },
       {
         id: '3-3',
-        url: 'https://images.unsplash.com/photo-1560439513-74b037a25d84?w=1200&h=800&fit=crop',
-        alt: 'Speaker session'
+        url: 'images/gallery/Innospace 3.3.jpeg',
+        alt: 'INNOSPACE 2K26 - Idea Pitching Competition - Presentation'
       },
       {
         id: '3-4',
-        url: 'https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=1200&h=800&fit=crop',
-        alt: 'Attendees mingling'
+        url: 'images/gallery/Innospace 3.4.jpeg',
+        alt: 'INNOSPACE 2K26 - Idea Pitching Competition - Volunteers'
       },
       {
         id: '3-5',
-        url: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=1200&h=800&fit=crop',
-        alt: 'Keynote presentation'
+        url: 'images/gallery/Innospace 3.5.jpeg',
+        alt: 'INNOSPACE 2K26 - Idea Pitching Competition - Judges'
+      },
+    ]
+  },
+  {
+    id: '4',
+    slug: 'startup-orientation-ideation-ai-workshop',
+    title: 'Startup Orientation: Ideation & AI Workshop',
+    description: 'Turn your ideas into impact at the Startup Orientation: Ideation & AI Workshop conducted by Druv360° Entrepreneurs Hub in association with Ilahia College of Engineering & Technology, Institution\'s Innovation Council (IIC), and Kerala Startup Mission Innovation & Entrepreneurship Development Centre (IEDC). Learn how to validate ideas, leverage AI tools, develop an entrepreneurial mindset, and collaborate to build innovative startups. The session will be led by Mr. Immanuel Varghese, Founder of Druv360° Entrepreneurs Hub.',
+    coverImage: 'images/gallery/Startup 4.1.jpeg',
+    eventDate: 'july 30 2026',
+    imageCount: 7,
+    images: [
+      {
+        id: '4-1',
+        url: 'images/gallery/Startup 4.1.jpeg',
+        alt: 'Startup Orientation: Ideation & AI Workshop - Poster'
       },
       {
-        id: '3-6',
-        url: 'https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=1200&h=800&fit=crop',
-        alt: 'Q&A session'
+        id: '4-2',
+        url: 'images/gallery/Startup 4.2.jpeg',
+        alt: 'Startup Orientation: Ideation & AI Workshop - Technology Learning'
       },
       {
-        id: '3-7',
-        url: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1200&h=800&fit=crop',
-        alt: 'Coffee networking'
+        id: '4-3',
+        url: 'images/gallery/Startup 4.3.jpeg',
+        alt: 'Startup Orientation: Ideation & AI Workshop - Teaching'
       },
       {
-        id: '3-8',
-        url: 'https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=1200&h=800&fit=crop',
-        alt: 'Group conversation'
+        id: '4-4',
+        url: 'images/gallery/Startup 4.4.jpeg',
+        alt: 'Startup Orientation: Ideation & AI Workshop - Learning'
       },
       {
-        id: '3-9',
-        url: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1200&h=800&fit=crop',
-        alt: 'Closing remarks'
+        id: '4-5',
+        url: 'images/gallery/Startup 4.5.jpeg',
+        alt: 'Startup Orientation: Ideation & AI Workshop - Presentation'
       },
       {
-        id: '3-10',
-        url: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=1200&h=800&fit=crop',
-        alt: 'Group photo'
-      }
+        id: '4-6',
+        url: 'images/gallery/Startup 4.6.jpeg',
+        alt: 'Startup Orientation: Ideation & AI Workshop - Presentation'
+      },
+      {
+        id: '4-7',
+        url: 'images/gallery/Startup 4.7.jpeg',
+        alt: 'Startup Orientation: Ideation & AI Workshop - Presentation'
+      },
     ]
   }
 ];
