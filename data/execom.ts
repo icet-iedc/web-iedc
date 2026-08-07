@@ -4,7 +4,7 @@ export interface ExecomMember {
   fullName: string;
   role: string;
   department: string;
-  academicYear: string;
+  academicYear?: string;
   gender: string;
   email: string;
   phone?: string;
@@ -19,32 +19,25 @@ export interface ExecomMember {
 export const execomMembers: ExecomMember[] = [
   {
     id: '1',
-    slug: 'dulquer-salmaan',
-    fullName: 'Dulquer Salmaan',
-    role: 'Chairperson',
-    department: 'COMPUTER SCIENCE AND ENGINEERING',
-    academicYear: '2022-2026',
+    slug: 'ashwin',
+    fullName: 'Dr Ashwin',
+    role: 'Nodal Officer',
+    department: 'Cyber Security',
     gender: 'Male',
-    email: 'haleel@iedcicet.in',
-    phone: '+91 90000 00000',
-    photo: '/images/execom/dq.jpg',
-    linkedin: 'https://linkedin.com/in/example',
-    instagram: 'https://instagram.com/example',
-    github: 'https://github.com/example',
+    email: 'ashwinvh@icet.ac.in',
+    photo: '/images/execom/Ashwin.jpeg',
+    linkedin: 'https://www.linkedin.com/in/dr-ashwin-vh-387a4b63',
   },
   {
     id: '2',
-    slug: 'mammootty',
-    fullName: 'Mammootty',
-    role: 'Vice Chairperson',
-    department: 'Electronics & Communication',
-    academicYear: '2022-2026',
+    slug: 'alisha-muhammed-shafi',
+    fullName: 'Ms Alisha muhammed shafi',
+    role: 'Nodal Officer',
+    department: 'Cyber Security',
     gender: 'Female',
-    email: 'jane@iedcicet.in',
-    photo: '/images/execom/Mammootty.jpg',
-    linkedin: 'https://linkedin.com/in/example',
-    instagram: 'https://instagram.com/example',
-    github: 'https://github.com/example',
+    email: 'alishamuhammed@icet.ac.in',
+    photo: '/images/execom/Alisha.jpeg',
+    linkedin: 'https://www.linkedin.com/in/alisha-muhammed-shafi-160029258',
   },
   {
     id: '3',
