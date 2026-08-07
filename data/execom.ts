@@ -31,7 +31,7 @@ export const execomMembers: ExecomMember[] = [
   {
     id: '2',
     slug: 'alisha-muhammed-shafi',
-    fullName: 'Ms Alisha muhammed shafi',
+    fullName: 'Ms Alisha Muhammed Shafi',
     role: 'Nodal Officer',
     department: 'Cyber Security',
     gender: 'Female',
@@ -181,7 +181,7 @@ export const execomMembers: ExecomMember[] = [
     academicYear: '2024-2028',
     gender: 'Male',
     email: 'muhammedhaleel21@gmail.com',
-    photo: '/images/execom/Muhammed Haleel.JPG',
+    photo: '/images/execom/Muhammed Haleel.png',
     linkedin: 'https://www.linkedin.com/in/muhammedhaleel/',
     instagram: 'https://www.instagram.com/muhd_haleel/',
     github: 'https://github.com/Muhammedhaleel21',
