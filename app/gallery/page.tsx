@@ -1,61 +1,91 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { ArrowLeft } from 'lucide-react';
-import { useRouter } from 'next/navigation';
+import { useState } from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
+import { galleryCollections } from '@/data/gallery';
+import type { GalleryCollection } from '@/data/gallery';
+import GalleryCard from '@/components/gallery/GalleryCard';
+import GalleryModal from '@/components/gallery/GalleryModal';
+import Footer from '@/components/Footer';
 
 export default function GalleryPage() {
-  const router = useRouter();
+  const reduceMotion = useReducedMotion();
+  const [selectedCollection, setSelectedCollection] = useState<GalleryCollection | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleCardClick = (collection: GalleryCollection) => {
+    setSelectedCollection(collection);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setTimeout(() => setSelectedCollection(null), 300);
+  };
+
+  const fade = (delay = 0, y = 20) =>
+    reduceMotion
+      ? {}
+      : {
+          initial: { opacity: 0, y },
+          animate: { opacity: 1, y: 0 },
+          viewport: { once: true, margin: '-50px' },
+          transition: { duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] as const },
+        };
+
+  // Sort collections by date descending (newest first)
+  const sortedCollections = [...galleryCollections].sort(
+    (a, b) => new Date(b.eventDate).getTime() - new Date(a.eventDate).getTime()
+  );
 
   return (
-    <div className="relative min-h-screen bg-black flex items-center justify-center">
+    <div className="relative min-h-screen bg-black pt-32">
       {/* Background Grid */}
       <div
-        className="absolute inset-0 opacity-[0.25] pointer-events-none"
+        className="fixed inset-0 opacity-[0.35] pointer-events-none"
         style={{
           backgroundImage:
-            'linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px)',
+            'linear-gradient(to right, rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.08) 1px, transparent 1px)',
           backgroundSize: '64px 64px',
         }}
       />
 
-      <div className="relative z-10 max-w-2xl mx-auto px-6 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
-            <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse" />
-            <span className="font-mono text-xs tracking-wider text-white/55 uppercase">
-              Coming Soon
-            </span>
-          </div>
+      {/* Single restrained light source */}
+      <div className="fixed -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full bg-white opacity-[0.12] blur-[160px] pointer-events-none" />
 
-          {/* Heading */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-white mb-4">
-            Full Gallery
-            <br />
-            <span className="text-[#D4AF37]">Coming Soon</span>
-          </h1>
-
-          {/* Description */}
-          <p className="text-base md:text-lg text-white/55 leading-relaxed mb-8">
-            We&apos;re building a complete gallery experience to showcase all our events
-            and activities. Stay tuned!
-          </p>
-
-          {/* Back Button */}
-          <button
-            onClick={() => router.push('/')}
-            className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm text-white font-medium transition-all duration-300 hover:bg-[#D4AF37]/10 hover:border-[#D4AF37]/40 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#D4AF37]/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37]"
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 pb-24 md:pb-32 mt-5">
+        {/* Section Header */}
+        <div className="mx-auto max-w-2xl text-center mb-16">
+          <motion.h1
+            {...fade(0.1)}
+            className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl"
           >
-            <ArrowLeft className="w-5 h-5 transition-transform duration-300 group-hover:-translate-x-1" />
-            <span>Back to Home</span>
-          </button>
-        </motion.div>
+            Gallery
+          </motion.h1>
+
+        </div>
+
+        {/* Gallery Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {sortedCollections.map((collection, index) => (
+            <GalleryCard
+              key={collection.id}
+              collection={collection}
+              index={index}
+              onClick={() => handleCardClick(collection)}
+            />
+          ))}
+        </div>
       </div>
+
+      <Footer />
+
+      {/* Gallery Modal */}
+      <GalleryModal
+        isOpen={isModalOpen}
+        collection={selectedCollection}
+        onClose={handleCloseModal}
+      />
     </div>
   );
 }

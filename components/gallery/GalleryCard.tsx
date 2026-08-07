@@ -64,10 +64,7 @@ export default function GalleryCard({ collection, index, onClick }: GalleryCardP
         </p>
 
         {/* View Button */}
-        <div className="flex items-center gap-2 text-sm font-medium text-[#D4AF37]">
-          <span>View Gallery</span>
-          <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
-        </div>
+        
       </div>
 
       {/* Hover Glow Effect */}
