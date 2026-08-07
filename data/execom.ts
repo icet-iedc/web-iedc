@@ -218,8 +218,8 @@ export const execomMembers: ExecomMember[] = [
     academicYear: '2024-2028',
     gender: 'Male',
     email: 'ansilhashimofficial@gmail.com',
-    photo: '/images/execom/Ansil Hashim.jpg',
-    linkedin: 'https://www.linkedin.com/in/ansil-hashim-a88109331?utm_source=share_via&utm_content=profile&utm_medium=member_android',
+    photo: '/images/execom/Ansil.png',
+    linkedin: 'https://www.linkedin.com/in/ansil-hashim',
     instagram: 'https://www.instagram.com/aansiil__?igsh=MTZvbnhneDdyOWNzcw==',    
   },
   {
