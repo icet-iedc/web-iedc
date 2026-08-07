@@ -32,7 +32,6 @@ export default function ProfileInfo({ member }: { member: ExecomMember }) {
           <InfoRow icon={User} label="Full Name" value={member.fullName} />
           <InfoRow icon={Briefcase} label="Role" value={member.role} />
           <InfoRow icon={GraduationCap} label="Department" value={member.department} />
-          <InfoRow icon={Calendar} label="Academic Year" value={member.academicYear} />
           <InfoRow icon={Users} label="Gender" value={member.gender} />
           <InfoRow icon={Mail} label="Email" value={member.email} />
           {member.phone && <InfoRow icon={Phone} label="Phone" value={member.phone} />}
