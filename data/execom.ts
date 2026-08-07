@@ -81,7 +81,7 @@ export const execomMembers: ExecomMember[] = [
     academicYear: '2023-2027',
     gender: 'Male',
     email: 'hanankannanaris@gmail.com',
-    photo: '/images/execom/Hanan.jpg',
+    photo: '/images/execom/Hanan.jpeg',
     linkedin: 'https://www.linkedin.com/in/hanan-k-44883a299?utm_source=share_via&utm_content=profile&utm_medium=member_android',
     instagram: 'https://www.instagram.com/hanan_unknown?igsh=djJxbXB1OHU3bGs0',
   },
