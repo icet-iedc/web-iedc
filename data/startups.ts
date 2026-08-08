@@ -13,14 +13,14 @@ export interface Startup {
 export const startups: Startup[] = [
   {
     id: '1',
-    name: 'NexusAI',
-    shortDescription: 'Generative AI tools for creative professionals.',
-    description: 'Building next-generation generative AI tools for creative professionals to automate their workflows. Our platform significantly reduces the time it takes to create high-quality assets while giving artists fine-grained control over the generated output.',
-    category: 'Artificial Intelligence',
-    logo: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=200&h=200&fit=crop',
-    website: 'https://example.com/nexusai',
-    linkedin: 'https://linkedin.com/',
-    instagram: 'https://instagram.com/'
+    name: 'DaytX Private limited',
+    shortDescription: 'DAYTX Private Limited develops intelligent engineering solutions through research and innovation in AI, robotics, sustainability, cybersecurity, and technology.',
+    description: 'DAYTX Private Limited is a research and technology-driven company dedicated to advancing innovation through the development of intelligent engineering solutions. The Company specializes in artificial intelligence, robotics, disaster management, energy management, sustainable development, waste management, cybersecurity, and technology consulting. By integrating cutting-edge research with practical applications, DAYTX Private Limited is committed to delivering scalable, reliable, and impactful solutions that address complex global challenges while fostering resilience, operational excellence, and sustainable progress.',
+    category: 'Robotics',
+    logo: '/images/startup/DaytX.jpeg',
+    website: 'https://website-creator--amarashique.replit.app/',
+    linkedin: 'https://www.linkedin.com/company/daytx-private-limited/',
+    //instagram: 'https://instagram.com/'
   },
   {
     id: '2',
