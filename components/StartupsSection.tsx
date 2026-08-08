@@ -1,12 +1,17 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Globe } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { startups } from '@/data/startups';
+import { startups, type Startup } from '@/data/startups';
+import StartupModal from './StartupModal';
+import { FaLinkedin, FaInstagram, FaGithub } from 'react-icons/fa';
 
 export default function StartupsSection() {
+  const [selectedStartup, setSelectedStartup] = useState<Startup | null>(null);
+
   return (
     <section id="startups" className="py-32 relative overflow-hidden">
       {/* Background glow */}
@@ -36,7 +41,8 @@ export default function StartupsSection() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
               whileHover={{ y: -5 }}
-              className="glass rounded-3xl p-6 flex flex-col group hover:bg-white/10 transition-all duration-300 relative border border-white/5"
+              onClick={() => setSelectedStartup(startup)}
+              className="glass rounded-3xl p-6 flex flex-col group hover:bg-white/10 transition-all duration-300 relative border border-white/5 cursor-pointer"
             >
               <div className="flex justify-between items-start mb-6">
                 <div className="relative w-16 h-16 rounded-2xl overflow-hidden shrink-0 border border-white/10 group-hover:border-white/20 transition-colors bg-white/5">
@@ -53,20 +59,6 @@ export default function StartupsSection() {
                     </div>
                   )}
                 </div>
-                
-                <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  
-                  {startup.website && (
-                    <Link
-                      href={startup.website}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-2 glass rounded-full text-white/50 hover:text-white hover:bg-white/20 transition-all duration-300"
-                    >
-                      <ExternalLink className="w-4 h-4" />
-                    </Link>
-                  )}
-                </div>
               </div>
               
               <div className="flex-1">
@@ -74,19 +66,23 @@ export default function StartupsSection() {
                   {startup.name}
                 </h3>
                 <p className="text-[#A8A8A8] text-sm leading-relaxed line-clamp-3">
-                  {startup.description}
+                  {startup.shortDescription}
                 </p>
               </div>
               
               <div className="mt-6 flex items-center text-xs text-[#A8A8A8] gap-2 pt-4 border-t border-white/5">
                 <span>{startup.category}</span>
-                <span className="w-1 h-1 rounded-full bg-[#A8A8A8]/50" />
-                <span>Kerala</span>
               </div>
             </motion.div>
           ))}
         </div>
       </div>
+
+      <StartupModal
+        isOpen={!!selectedStartup}
+        startup={selectedStartup}
+        onClose={() => setSelectedStartup(null)}
+      />
     </section>
   );
 }
