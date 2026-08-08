@@ -150,6 +150,23 @@ export default function StartupModal({ isOpen, startup, onClose }: StartupModalP
                       </Link>
                     </div>
                   )}
+                  
+                  {/* Team Members Section */}
+                  {startup.teamMembers && startup.teamMembers.length > 0 && (
+                    <div className="mt-8 pt-8 border-t border-white/10">
+                      <h3 className="text-xl font-semibold text-white mb-4">Team</h3>
+                      <div className="flex flex-wrap gap-4">
+                        {startup.teamMembers.map((member, idx) => (
+                          <div key={idx} className="flex items-center">
+                            <span className="text-white font-medium">{member}</span>
+                            {idx < startup.teamMembers!.length - 1 && (
+                              <span className="text-[#A8A8A8] ml-4">•</span>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             </motion.div>
