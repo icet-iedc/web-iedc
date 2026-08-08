@@ -1,4 +1,5 @@
 export interface Startup {
+  id: string;
   name: string;
   shortDescription: string;
   description: string;
@@ -11,6 +12,7 @@ export interface Startup {
 
 export const startups: Startup[] = [
   {
+    id: '1',
     name: 'NexusAI',
     shortDescription: 'Generative AI tools for creative professionals.',
     description: 'Building next-generation generative AI tools for creative professionals to automate their workflows. Our platform significantly reduces the time it takes to create high-quality assets while giving artists fine-grained control over the generated output.',
@@ -21,6 +23,7 @@ export const startups: Startup[] = [
     instagram: 'https://instagram.com/'
   },
   {
+    id: '2',
     name: 'EcoSphere',
     shortDescription: 'Connecting sustainable brands with consumers.',
     description: 'A platform connecting sustainable brands with environmentally conscious consumers using blockchain. We verify the supply chain of every product on our platform to ensure that what you buy is truly sustainable from start to finish.',
@@ -31,6 +34,7 @@ export const startups: Startup[] = [
     instagram: 'https://instagram.com/'
   },
   {
+    id: '3',
     name: 'CyberShield',
     shortDescription: 'ML-powered enterprise cybersecurity solutions.',
     description: 'Enterprise-grade cybersecurity solutions utilizing machine learning for predictive threat detection. CyberShield proactively identifies and mitigates vulnerabilities before they can be exploited, providing 24/7 protection for critical infrastructure.',
@@ -40,6 +44,7 @@ export const startups: Startup[] = [
     linkedin: 'https://linkedin.com/'
   },
   {
+    id: '4',
     name: 'MediSync',
     shortDescription: 'Seamless EHR integration for rural clinics.',
     description: 'Seamless EHR integration tool designed to bridge the gap between rural clinics and specialized hospitals. MediSync ensures patient data flows securely and accurately across different medical systems, improving the quality of remote care.',
