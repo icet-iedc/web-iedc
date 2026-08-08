@@ -76,8 +76,22 @@ export default function StartupsSection() {
             </motion.div>
           ))}
         </div>
-      </div>
 
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-16 text-center"
+        >
+          <Link
+            href="/startups"
+            className="inline-flex items-center gap-2 glass px-8 py-4 rounded-full font-semibold text-white hover:bg-white/20 transition-all duration-300 group"
+          >
+            View All Startups
+            <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+          </Link>
+        </motion.div>
+      </div>
       <StartupModal
         isOpen={!!selectedStartup}
         startup={selectedStartup}
