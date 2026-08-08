@@ -1,31 +1,16 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Globe } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { startups } from '@/data/startups';
 
 export default function StartupsSection() {
-  const startups = [
-    {
-      name: 'TechVenture',
-      description: 'AI-powered educational platform revolutionizing online learning',
-      category: 'EdTech',
-    },
-    {
-      name: 'GreenFlow',
-      description: 'Sustainable agriculture solutions using IoT and automation',
-      category: 'AgriTech',
-    },
-    {
-      name: 'HealthBridge',
-      description: 'Connecting patients with healthcare providers seamlessly',
-      category: 'HealthTech',
-    },
-  ];
-
   return (
     <section id="startups" className="py-32 relative overflow-hidden">
       {/* Background glow */}
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white opacity-10 blur-[150px] rounded-full" />
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white opacity-10 blur-[150px] rounded-full pointer-events-none" />
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <motion.div
@@ -42,32 +27,62 @@ export default function StartupsSection() {
           </p>
         </motion.div>
 
-        <div className="space-y-6">
-          {startups.map((startup, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {startups.slice(0, 3).map((startup, index) => (
             <motion.div
               key={startup.name}
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
-              whileHover={{ scale: 1.01 }}
-              className="glass rounded-3xl p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6 group hover:bg-white/10 transition-all duration-300"
+              whileHover={{ y: -5 }}
+              className="glass rounded-3xl p-6 flex flex-col group hover:bg-white/10 transition-all duration-300 relative border border-white/5"
             >
-              <div className="flex-1">
-                <div className="flex items-center gap-3 mb-3">
-                  <h3 className="text-2xl font-bold group-hover:text-white transition-colors duration-300">
-                    {startup.name}
-                  </h3>
-                  <span className="px-3 py-1 rounded-full bg-white/10 text-white text-xs font-semibold">
-                    {startup.category}
-                  </span>
+              <div className="flex justify-between items-start mb-6">
+                <div className="relative w-16 h-16 rounded-2xl overflow-hidden shrink-0 border border-white/10 group-hover:border-white/20 transition-colors bg-white/5">
+                  {startup.logo ? (
+                    <Image
+                      src={startup.logo}
+                      alt={`${startup.name} logo`}
+                      fill
+                      className="object-cover"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center text-white/50 font-bold text-xl">
+                      {startup.name.charAt(0)}
+                    </div>
+                  )}
                 </div>
-                <p className="text-[#A8A8A8]">{startup.description}</p>
+                
+                <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  
+                  {startup.website && (
+                    <Link
+                      href={startup.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 glass rounded-full text-white/50 hover:text-white hover:bg-white/20 transition-all duration-300"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                    </Link>
+                  )}
+                </div>
               </div>
-              <button className="flex items-center gap-2 glass px-6 py-3 rounded-full font-semibold text-sm hover:bg-white/20 transition-all duration-300 group/btn">
-                Visit
-                <ExternalLink className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
-              </button>
+              
+              <div className="flex-1">
+                <h3 className="text-xl font-bold group-hover:text-white transition-colors duration-300 mb-2">
+                  {startup.name}
+                </h3>
+                <p className="text-[#A8A8A8] text-sm leading-relaxed line-clamp-3">
+                  {startup.description}
+                </p>
+              </div>
+              
+              <div className="mt-6 flex items-center text-xs text-[#A8A8A8] gap-2 pt-4 border-t border-white/5">
+                <span>{startup.category}</span>
+                <span className="w-1 h-1 rounded-full bg-[#A8A8A8]/50" />
+                <span>Kerala</span>
+              </div>
             </motion.div>
           ))}
         </div>
