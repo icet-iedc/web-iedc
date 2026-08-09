@@ -108,17 +108,6 @@ export default function StartupModal({ isOpen, startup, onClose }: StartupModalP
                         <FaInstagram className="w-5 h-5" />
                       </Link>
                     )}
-                    {startup.website && (
-                      <Link
-                        href={startup.website}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-3 glass rounded-full text-white/70 hover:text-white hover:bg-white/20 transition-all duration-300"
-                        aria-label={`${startup.name} Website`}
-                      >
-                        <Globe className="w-5 h-5" />
-                      </Link>
-                    )}
                   </div>
                 </div>
 
