@@ -26,15 +26,15 @@ export const startups: Startup[] = [
   },
   {
     id: '2',
-    name: 'EcoSphere',
-    shortDescription: 'Connecting sustainable brands with consumers.',
-    description: 'A platform connecting sustainable brands with environmentally conscious consumers using blockchain. We verify the supply chain of every product on our platform to ensure that what you buy is truly sustainable from start to finish.',
-    category: 'GreenTech',
-    logo: 'https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?w=200&h=200&fit=crop',
-    website: 'https://example.com/ecosphere',
-    linkedin: 'https://linkedin.com/',
-    instagram: 'https://instagram.com/',
-    teamMembers: ['Elena Rodriguez', 'Marcus Johnson']
+    name: 'Zaasio Technology',
+    shortDescription: 'Zaasio Technology is a software development company that focuses on delivering innovative digital solutions and technology services.',
+    description: 'Zaasio Technology is an innovative SaaS company focused on developing intelligent, cloud-based software solutions that help businesses streamline operations, improve productivity, and scale efficiently. With a strong focus on Artificial Intelligence (AI), Machine Learning (ML), automation, and real-time data insights, Zaasio builds practical technology solutions to address real-world business challenges.The company specializes in custom software development and scalable digital solutions, combining emerging technologies with user-centric design. Through its commitment to innovation, quality, and reliable technology, Zaasio Technology aims to make intelligent software accessible to businesses and contribute to the future of digital transformation and entrepreneurship.',
+    category: 'IT Services and IT Consulting',
+    logo: '/images/startup/zaasio_logo.jpg',
+    website: 'https://zaasio.com/',
+    linkedin: 'https://www.linkedin.com/company/zaasio',
+    //instagram: 'https://instagram.com/',
+    teamMembers: ['Mohammed Haris A P', 'B A Abdul Rahman', 'Muhammad Rizwan']
   },
   {
     id: '3',
