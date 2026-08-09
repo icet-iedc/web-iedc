@@ -64,7 +64,7 @@ export default function HeroSection() {
               className="flex items-center gap-3 mb-8 font-mono text-xs tracking-[0.25em] text-white/55 uppercase"
             >
               <span className="w-8 h-px bg-white/55" />
-              IEDC · ICET — Build Log №014
+              IEDC · ICET —
             </motion.div>
 
             {/* Headline */}
@@ -75,7 +75,7 @@ export default function HeroSection() {
               Empowering{' '}
               <span className="relative inline-block text-[var(--primary)]">
                 Ideas
-                <AnnotationCallout label="42 ventures incubated" />
+                {/*<AnnotationCallout label="42 ventures incubated" />*/}
               </span>
               .
               <br />
@@ -110,7 +110,8 @@ export default function HeroSection() {
             </motion.div>
           </div>
 
-          {/* Spec sheet — desktop only */}
+
+          {/* Spec sheet — desktop only 
           <motion.div
             {...fade(0.55, 0)}
             className="hidden lg:block border-l border-white/10 pl-8 font-mono text-xs text-white/55 leading-loose"
@@ -120,6 +121,7 @@ export default function HeroSection() {
             <SpecLine k="VENTURES" v="42" />
             <SpecLine k="STATUS" v="ACTIVE" accent />
           </motion.div>
+          */}
         </div>
       </div>
     </section>
