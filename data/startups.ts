@@ -28,7 +28,7 @@ export const startups: Startup[] = [
     id: '2',
     name: 'Zaasio Technology',
     shortDescription: 'Zaasio Technology is a software development company that focuses on delivering innovative digital solutions and technology services.',
-    description: 'Zaasio Technology is an innovative SaaS company focused on developing intelligent, cloud-based software solutions that help businesses streamline operations, improve productivity, and scale efficiently. With a strong focus on Artificial Intelligence (AI), Machine Learning (ML), automation, and real-time data insights, Zaasio builds practical technology solutions to address real-world business challenges.The company specializes in custom software development and scalable digital solutions, combining emerging technologies with user-centric design. Through its commitment to innovation, quality, and reliable technology, Zaasio Technology aims to make intelligent software accessible to businesses and contribute to the future of digital transformation and entrepreneurship.',
+    description: 'Zaasio Technology is an innovative SaaS company building intelligent, cloud-based solutions that help businesses streamline operations, boost productivity, and scale efficiently. With AI, ML, automation, and real-time data insights, Zaasio delivers practical, scalable software that solves real-world challenges and drives transformation.',
     category: 'IT Services and IT Consulting',
     logo: '/images/startup/zaasio_logo.jpg',
     website: 'https://zaasio.com/',
