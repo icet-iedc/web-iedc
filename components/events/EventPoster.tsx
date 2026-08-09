@@ -17,9 +17,6 @@ export default function EventPoster({ poster, title }: EventPosterProps) {
       transition={{ duration: 0.6, delay: 0.3 }}
       className="relative group"
     >
-      {/* Glow Effect */}
-      <div className="absolute -inset-4 bg-gradient-to-r from-[#D4AF37]/20 to-[#FFD700]/20 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      
       {/* Poster Container */}
       <div className="relative aspect-[4/5] w-full rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
         <Image
