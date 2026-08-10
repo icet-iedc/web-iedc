@@ -22,7 +22,7 @@ export default function Home() {
       <StartupsSection />
       <LatestGallery />
       <ExecomSection />
-      <LatestAchievements />
+      {/*<LatestAchievements />*/}
       <Footer />
     </div>
   );
