@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Sparkles } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { FaLinkedin, FaInstagram, FaFacebook } from 'react-icons/fa';
 import { FaXTwitter } from "react-icons/fa6";
@@ -24,25 +24,40 @@ export default function Footer() {
   ];
 
   return (
-    <footer id="contact" className="relative py-16 border-t border-white/5 mt-20">
+    <footer id="contact" className="relative py-16 border-t border-white/5 -mt-8">
       <div className="max-w-4xl mx-auto px-6 flex flex-col items-center">
-        
+
         {/* Logo */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="flex items-center gap-3 mb-8 sm:mb-10"
+          className="mb-8 sm:mb-10"
         >
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#D4AF37] to-[#FFD700] flex items-center justify-center shadow-[0_0_15px_rgba(212,175,55,0.3)]">
-            <Sparkles className="w-5 h-5 text-black" />
-          </div>
-          <span className="text-xl sm:text-2xl font-bold tracking-tight text-white">IEDC ICET</span>
+          <Link
+            href="/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 group"
+          >
+            <div className="relative w-12 h-12 flex items-center justify-center">
+              <Image
+                src="/images/plane_logo.png"
+                alt="IEDC ICET Logo"
+                fill
+                className="object-contain"
+                sizes="48px"
+              />
+            </div>
+            <span className="text-xl sm:text-2xl font-bold tracking-tight text-white group-hover:text-[#D4AF37] transition-colors duration-300">
+              IEDC ICET
+            </span>
+          </Link>
         </motion.div>
 
         {/* Links */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -61,7 +76,7 @@ export default function Footer() {
         </motion.div>
 
         {/* Social Icons */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
