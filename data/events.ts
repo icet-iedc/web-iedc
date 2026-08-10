@@ -31,21 +31,6 @@ export const events: Event[] = [
     registrationStatus: 'Open',
     tags: ['Bootcamp', 'Entrepreneurship', 'Startup', 'Mentorship'],
   },
-  {
-    id: '2',
-    slug: 'innovation-hackathon-2024',
-    title: 'Innovation Hackathon 2024',
-    subtitle: 'Code. Create. Innovate.',
-    description: 'A 48-hour coding marathon where teams build innovative solutions to real-world problems. Compete for exciting prizes, network with industry professionals, and showcase your technical skills.',
-    poster: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=1000&fit=crop',
-    date: '2024-04-20',
-    time: '6:00 PM (Day 1) - 6:00 PM (Day 3)',
-    venue: 'ICET Innovation Lab',
-    registrationFee: '₹200 per team',
-    maxParticipants: 150,
-    registrationStatus: 'Coming Soon',
-    tags: ['Hackathon', 'Coding', 'Innovation', 'Competition'],
-  },
 ];
 
 // Get the latest upcoming event
@@ -55,5 +40,5 @@ export function getLatestEvent(): Event | null {
     .filter(event => new Date(event.date) >= now)
     .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
   
-  return upcomingEvents.length > 0 ? upcomingEvents[0] : events[0];
+  return upcomingEvents.length > 0 ? upcomingEvents[0] : null;
 }

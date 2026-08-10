@@ -4,13 +4,10 @@ import { motion } from 'framer-motion';
 import { getLatestEvent } from '@/data/events';
 import EventInfo from './EventInfo';
 import EventPoster from './EventPoster';
+import ComingSoon from './ComingSoon';
 
 export default function RecentEvent() {
   const event = getLatestEvent();
-
-  if (!event) {
-    return null;
-  }
 
   return (
     <section id="events" className="relative py-20 sm:py-24 lg:py-32 overflow-hidden">
@@ -43,22 +40,30 @@ export default function RecentEvent() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-base sm:text-lg text-gray-400 max-w-3xl mx-auto"
           >
-            Discover our latest workshops, startup programs, hackathons, and community events designed to inspire innovation and entrepreneurship.
+            {event
+              ? 'Discover our latest workshops, startup programs, hackathons, and community events designed to inspire innovation and entrepreneurship.'
+              : 'Stay tuned for our next workshops, startup programs, hackathons, and community events.'}
           </motion.p>
         </div>
 
-        {/* Event Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-start">
-          {/* Left Side - Event Info (60%) */}
-          <div className="lg:col-span-3 order-2 lg:order-1">
-            <EventInfo event={event} />
-          </div>
+        {/* Conditional Content */}
+        {event ? (
+          /* Event Content */
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-start">
+            {/* Left Side - Event Info (60%) */}
+            <div className="lg:col-span-3 order-2 lg:order-1">
+              <EventInfo event={event} />
+            </div>
 
-          {/* Right Side - Event Poster (40%) */}
-          <div className="lg:col-span-2 order-1 lg:order-2">
-            <EventPoster poster={event.poster} title={event.title} />
+            {/* Right Side - Event Poster (40%) */}
+            <div className="lg:col-span-2 order-1 lg:order-2">
+              <EventPoster poster={event.poster} title={event.title} />
+            </div>
           </div>
-        </div>
+        ) : (
+          /* Coming Soon State */
+          <ComingSoon />
+        )}
       </div>
     </section>
   );
