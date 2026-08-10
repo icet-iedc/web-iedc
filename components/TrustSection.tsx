@@ -22,7 +22,7 @@ export default function TrustSection() {
           Trusted by Kerala Innovation Ecosystem
         </motion.p>
         
-        <div className="flex flex-wrap justify-center items-center gap-12 md:gap-70">
+        <div className="flex flex-nowrap md:flex-wrap justify-center items-center gap-12 md:gap-70">
           {partners.map((partner, index) => (
             <motion.div
               key={partner.name}
