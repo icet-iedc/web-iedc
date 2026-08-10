@@ -57,22 +57,6 @@ export default function ExecomSection() {
           )}
         </div>
 
-        {/* View All Button */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="flex justify-center"
-        >
-          <Link
-            href="/execom"
-            className="group inline-flex items-center gap-2 px-6 py-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full text-white hover:bg-white/10 hover:border-white/30 transition-all duration-300"
-          >
-            <span className="font-medium">View All Members</span>
-            <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
-          </Link>
-        </motion.div>
       </div>
     </section>
   );
