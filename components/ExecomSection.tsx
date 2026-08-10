@@ -46,13 +46,56 @@ export default function ExecomSection() {
               </div>
             ))}
           </div>
-          
-          {/* Subsequent Rows: 4 Members Grid */}
-          {execomMembers.length > 2 && (
+
+          {/* Subsequent Rows: Main Execom Grid */}
+          {execomMembers.length > 4 && (
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12">
-              {execomMembers.slice(2).map((member, index) => (
-                <ExecomCard key={member.id} member={member} index={index + 2} />
-              ))}
+              {execomMembers.slice(2, -2).map((member, index, arr) => {
+                const isSecondToLast = index === arr.length - 2;
+                const hasTwoOnLastRowLg = arr.length % 4 === 2;
+
+                return (
+                  <div
+                    key={member.id}
+                    className={isSecondToLast && hasTwoOnLastRowLg ? 'lg:col-start-2' : ''}
+                  >
+                    <ExecomCard member={member} index={index + 2} />
+                  </div>
+                );
+              })}
+            </div>
+          )}
+
+          {/* Developers Section */}
+          {/* Developers Section */}
+          {execomMembers.length >= 4 && (
+            <div className="mt-8 sm:mt-12 pt-12 sm:pt-16 border-t border-white/5">
+              <div className="text-center mb-10 sm:mb-12">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <h3 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
+                    Web <span className="gold-gradient">Developers</span>
+                  </h3>
+                </motion.div>
+              </div>
+              
+              <div className="flex justify-center gap-8 sm:gap-10 lg:gap-12">
+                {execomMembers.slice(-2).map((member, index) => {
+                  const devRole = index === 0 ? 'Full Stack Developer' : 'Backend Developer';
+                  return (
+                    <div key={member.id} className="w-1/2 sm:w-1/3 lg:w-1/4 max-w-[280px]">
+                      <ExecomCard 
+                        member={{...member, role: devRole}} 
+                        index={execomMembers.length - 2 + index} 
+                      />
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           )}
         </div>
