@@ -1,9 +1,4 @@
-/**
- * Centralized SEO configuration for IEDC ICET website.
- *
- * Set NEXT_PUBLIC_SITE_URL in your environment to the production domain.
- * Falls back to http://localhost:3000 for local development.
- */
+
 
 export const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
