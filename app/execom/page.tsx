@@ -1,11 +1,36 @@
 import type { Metadata } from 'next';
+import { siteConfig } from '@/lib/seo';
 import { getAllExecomMembers } from '@/lib/execom';
 import ExecomCard from '@/components/execom/ExecomCard';
 
 export const metadata: Metadata = {
-  title: 'Executive Committee | IEDC ICET',
+  title: 'Executive Committee',
   description:
-    'Meet the passionate student leaders driving innovation, entrepreneurship, and technology at IEDC ICET.',
+    'Meet the passionate student leaders, nodal officers, and innovators who drive IEDC ICET. Our Executive Committee represents diverse engineering disciplines united by a shared mission of entrepreneurship and innovation.',
+  alternates: {
+    canonical: '/execom',
+  },
+  openGraph: {
+    title: 'Executive Committee | IEDC ICET',
+    description:
+      'Meet the passionate student leaders and nodal officers who drive innovation and entrepreneurship at IEDC ICET.',
+    url: '/execom',
+    images: [
+      {
+        url: siteConfig.defaultOgImage,
+        width: 1200,
+        height: 630,
+        alt: 'IEDC ICET Executive Committee',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Executive Committee | IEDC ICET',
+    description:
+      'Meet the passionate student leaders and nodal officers who drive innovation and entrepreneurship at IEDC ICET.',
+    images: [siteConfig.defaultOgImage],
+  },
 };
 
 export default async function ExecomPage() {

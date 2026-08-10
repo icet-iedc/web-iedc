@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
+import { siteUrl } from '@/lib/seo';
 import { getAllExecomMembers, getExecomMemberBySlug } from '@/lib/execom';
 import ProfileHeader from '@/components/execom/ProfileHeader';
 import ProfileInfo from '@/components/execom/ProfileInfo';
@@ -21,12 +20,43 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const member = await getExecomMemberBySlug(name);
 
   if (!member) {
-    return { title: 'Member Not Found | IEDC ICET' };
+    return {
+      title: 'Member Not Found',
+      robots: { index: false, follow: false },
+    };
   }
 
+  const title = `${member.fullName} – ${member.role}`;
+  const description = `${member.fullName} serves as ${member.role} in the ${member.department} department at IEDC ICET, Ilahia College of Engineering and Technology.`;
+
+  // Use member photo if it's an absolute URL or a known local asset
+  const memberPhoto = member.photo.startsWith('http')
+    ? member.photo
+    : `${siteUrl}${member.photo}`;
+
   return {
-    title: `${member.fullName} | Executive Committee`,
-    description: `Executive Committee profile of ${member.fullName}.`,
+    title,
+    description,
+    alternates: {
+      canonical: `/execom/${member.slug}`,
+    },
+    openGraph: {
+      title: `${member.fullName} | IEDC ICET`,
+      description,
+      url: `/execom/${member.slug}`,
+      images: [
+        {
+          url: memberPhoto,
+          alt: `${member.fullName} – ${member.role} at IEDC ICET`,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary',
+      title: `${member.fullName} | IEDC ICET`,
+      description,
+      images: [memberPhoto],
+    },
   };
 }
 
