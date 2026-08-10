@@ -14,6 +14,18 @@ export interface Startup {
 export const startups: Startup[] = [
   {
     id: '1',
+    name: 'Zabios',
+    shortDescription: 'Zabios is a Kerala-based digital agency offering SEO & ads, web design, branding, and video solutions for local brands.',
+    description: 'Zabios is a Kerala-based digital marketing and technology agency helping local businesses grow through SEO, paid advertising, web design and development, graphic and logo design, and video production. Zabios pairs on-the-ground marketing expertise with technical execution — building brands digital presence from strategy through delivery, with a lean, modern infrastructure behind the scenes.',
+    category: 'IT Services and IT Consulting',
+    logo: '/images/startup/zabios.jpeg',
+    website: 'https://zabios.in/',
+    linkedin: 'https://www.linkedin.com/company/zabios/posts/?viewAsMember=true',
+    instagram: 'https://www.instagram.com/zabios.in?igsh=eGd5cnZ3Mm54bXhl',
+    teamMembers: ['Zakin Abdul Rahman', 'Ansil Hashim', 'Muhammed Abdul Basith']
+  },
+  {
+    id: '2',
     name: 'DaytX Private limited',
     shortDescription: 'DAYTX Private Limited develops intelligent engineering solutions through research and innovation in AI, robotics, sustainability, cybersecurity, and technology.',
     description: 'DAYTX Private Limited is a research-driven deep-tech company building scalable solutions for complex global challenges. Through AI, robotics, cybersecurity, energy, sustainability, and advanced engineering, we transform innovative ideas into high-impact technologies designed for real-world adoption, long-term growth, and global markets.',
@@ -25,7 +37,7 @@ export const startups: Startup[] = [
     teamMembers: ['Amar Ashique', 'Athwifamol A M', 'Muhammed Thaha', 'Aparna J Nair', 'Alshifa Rajeesh']
   },
   {
-    id: '2',
+    id: '3',
     name: 'Zaasio Technology',
     shortDescription: 'Zaasio Technology is a software development company that focuses on delivering innovative digital solutions and technology services.',
     description: 'Zaasio Technology is an innovative SaaS company building intelligent, cloud-based solutions that help businesses streamline operations, boost productivity, and scale efficiently. With AI, ML, automation, and real-time data insights, Zaasio delivers practical, scalable software that solves real-world challenges and drives transformation.',
