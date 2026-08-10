@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 export default function TrustSection() {
   const partners = [
-    { name: 'Kerala Startup Mission', logo: '/images/partners/ksm.png' },
+    { name: 'Kerala Startup Mission', logo: '/images/partners/ksm5.png' },
     { name: 'KDISC', logo: '/images/partners/iic.png' },
 
   ];
