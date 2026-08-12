@@ -12,21 +12,7 @@ export default function StartupsComingSoon() {
       <div className="absolute right-0 bottom-0 w-[400px] h-[400px] bg-white opacity-5 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-4xl mx-auto px-6 relative z-10 w-full text-center">
-        {/* Back button */}
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
-          className="absolute top-0 left-6 md:left-0"
-        >
-          <Link
-            href="/"
-            className="flex items-center gap-2 text-white/50 hover:text-white transition-colors duration-300"
-          >
-            <ArrowLeft className="w-5 h-5" />
-            Back to Home
-          </Link>
-        </motion.div>
+
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
