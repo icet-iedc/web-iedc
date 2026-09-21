@@ -1,10 +1,13 @@
 'use client';
 
+import { useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import LightRays from './ui/LightRays';
+import CommunityModal from '@/components/community/CommunityModal';
 
 export default function HeroSection() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const reduceMotion = useReducedMotion();
 
   const fade = (delay = 0, y = 20) =>
@@ -103,7 +106,10 @@ export default function HeroSection() {
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </button>
 
-              <button className="group relative inline-flex items-center justify-center px-4 sm:px-7 py-3.5 font-mono text-sm tracking-wide text-white transition-colors duration-300 hover:text-white/70 whitespace-nowrap">
+              <button 
+                onClick={() => setIsModalOpen(true)}
+                className="group relative inline-flex items-center justify-center px-4 sm:px-7 py-3.5 font-mono text-sm tracking-wide text-white transition-colors duration-300 hover:text-white/70 whitespace-nowrap"
+              >
                 <CornerBrackets />
                 Join Community
               </button>
@@ -124,6 +130,12 @@ export default function HeroSection() {
           */}
         </div>
       </div>
+      
+      {/* Community Modal */}
+      <CommunityModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+      />
     </section>
   );
 }
