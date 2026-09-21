@@ -7,6 +7,7 @@ import NextLink from "next/link";
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import "./navbar.css";
+import CommunityModal from "@/components/community/CommunityModal";
 
 interface NavItem {
   label: string;
@@ -26,6 +27,7 @@ const navItems: NavItem[] = [
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [communityModalOpen, setCommunityModalOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
   // Close mobile menu when clicking outside
@@ -116,7 +118,8 @@ export default function Navbar() {
         {/* Right Side */}
         <div className="flex items-center gap-4 flex-shrink-0">
           <button
-            className="hidden lg:inline-flex items-center justify-center rounded-full px-6 py-2.5 text-[14px] font-medium text-white shadow-lg transition hover:scale-105 bg-[var(--primary)] hover:bg-[var(--primary)]"
+            onClick={() => setCommunityModalOpen(true)}
+            className="hidden lg:inline-flex items-center justify-center rounded-full px-6 py-2.5 text-[14px] font-medium text-white shadow-lg transition hover:scale-105 bg-[var(--primary)] hover:bg-[var(--primary)] cursor-pointer"
           >
             Join Community
           </button>
@@ -169,11 +172,17 @@ export default function Navbar() {
                   </ScrollLink>
                 )
               )}
+              
             </div>
           </motion.nav>
         )}
       </AnimatePresence>
     </header>
+
+    <CommunityModal
+      isOpen={communityModalOpen}
+      onClose={() => setCommunityModalOpen(false)}
+    />
     </>
   );
 }
