@@ -5,6 +5,7 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import LightRays from './ui/LightRays';
 import CommunityModal from '@/components/community/CommunityModal';
+import { Link as ScrollLink } from 'react-scroll';
 
 export default function HeroSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -101,10 +102,16 @@ export default function HeroSection() {
               {...fade(0.45, 16)}
               className="mt-10 flex flex-row items-center gap-3 sm:gap-4"
             >
-              <button className="group inline-flex items-center justify-center gap-2 bg-white text-black px-4 sm:px-7 py-3.5 rounded-md font-medium text-sm tracking-wide transition-transform duration-300 hover:-translate-y-0.5 whitespace-nowrap">
+              <ScrollLink 
+                to="about"
+                smooth={true}
+                duration={450}
+                offset={-100}
+                className="group cursor-pointer inline-flex items-center justify-center gap-2 bg-white text-black px-4 sm:px-7 py-3.5 rounded-md font-medium text-sm tracking-wide transition-transform duration-300 hover:-translate-y-0.5 whitespace-nowrap"
+              >
                 Explore IEDC
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </button>
+              </ScrollLink>
 
               <button 
                 onClick={() => setIsModalOpen(true)}
